@@ -1,0 +1,12 @@
+﻿{
+  "texto": "Escoje de entre las opciones de respuesta la figura que sigue el razonamiento lógico de analogía entre los dos pares de figuras",
+  "pregunta": "pregunta.png",
+  "opciones": [
+    "A.png",
+    "B.png",
+    "C.png",
+    "D.png"
+  ],
+  "correcta": "B",
+  "explicacion": "En cada par de figuras las áreas negras pasan a blancas y las áreas blancas pasan a negras."
+}

@@ -1,0 +1,12 @@
+﻿{
+  "texto": "Escoje de entre las opciones de respuesta la figura que sigue el razonamiento lógico de analogía entre los dos pares de figuras",
+  "pregunta": "pregunta.png",
+  "opciones": [
+    "A.png",
+    "B.png",
+    "C.png",
+    "D.png"
+  ],
+  "correcta": "B",
+  "explicacion": "En cada par de figuras el dibujo grande blanco se hace negro sin cambiar de tamaño ni de posición. El dibujo pequeño pasa de negro a blanco, gira 180º y pasa de ser tangente exterior a tangente interior con el grande."
+}

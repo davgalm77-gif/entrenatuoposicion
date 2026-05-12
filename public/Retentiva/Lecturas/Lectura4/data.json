@@ -1,0 +1,430 @@
+﻿{
+  "titulo": "El pergamino misterioso",
+
+  "duracionSegundos": 300,
+
+  "archivoTexto": "texto.txt",
+
+  "preguntas": [
+    {
+      "texto": "¿Qué llevaba el profesor Lidenbrock al regresar a casa?",
+      "respuestas": [
+        {
+          "texto": "Un telescopio antiguo",
+          "correcta": false
+        },
+        {
+          "texto": "Un antiguo libro cubierto de polvo",
+          "correcta": true
+        },
+        {
+          "texto": "Una caja de minerales",
+          "correcta": false
+        },
+        {
+          "texto": "Un mapa de Islandia",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿A quién llamó el profesor desde el pasillo?",
+      "respuestas": [
+        {
+          "texto": "Otto",
+          "correcta": false
+        },
+        {
+          "texto": "Hans",
+          "correcta": false
+        },
+        {
+          "texto": "Axel",
+          "correcta": true
+        },
+        {
+          "texto": "Erik",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Qué profesión tenía el profesor Lidenbrock?",
+      "respuestas": [
+        {
+          "texto": "Astrónomo",
+          "correcta": false
+        },
+        {
+          "texto": "Mineralogista",
+          "correcta": true
+        },
+        {
+          "texto": "Médico",
+          "correcta": false
+        },
+        {
+          "texto": "Ingeniero",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Dónde había comprado el libro?",
+      "respuestas": [
+        {
+          "texto": "En Copenhague",
+          "correcta": false
+        },
+        {
+          "texto": "En Islandia",
+          "correcta": false
+        },
+        {
+          "texto": "En una universidad",
+          "correcta": false
+        },
+        {
+          "texto": "En Hamburgo",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "texto": "¿Qué cayó inesperadamente sobre la mesa?",
+      "respuestas": [
+        {
+          "texto": "Una brújula",
+          "correcta": false
+        },
+        {
+          "texto": "Un mineral",
+          "correcta": false
+        },
+        {
+          "texto": "Un pergamino",
+          "correcta": true
+        },
+        {
+          "texto": "Una llave antigua",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Cómo eran los caracteres del pergamino?",
+      "respuestas": [
+        {
+          "texto": "Griegos",
+          "correcta": false
+        },
+        {
+          "texto": "Latinos",
+          "correcta": false
+        },
+        {
+          "texto": "Egipcios",
+          "correcta": false
+        },
+        {
+          "texto": "Rúnicos",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "texto": "¿Qué hacía el profesor mientras intentaba descifrar el mensaje?",
+      "respuestas": [
+        {
+          "texto": "Descansaba en el sofá",
+          "correcta": false
+        },
+        {
+          "texto": "Consultaba diccionarios antiguos",
+          "correcta": true
+        },
+        {
+          "texto": "Dibujaba mapas",
+          "correcta": false
+        },
+        {
+          "texto": "Reparaba instrumentos",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Cómo se volvió el aire de la habitación?",
+      "respuestas": [
+        {
+          "texto": "Frío y húmedo",
+          "correcta": false
+        },
+        {
+          "texto": "Ligero y fresco",
+          "correcta": false
+        },
+        {
+          "texto": "Pesado y caluroso",
+          "correcta": true
+        },
+        {
+          "texto": "Oscuro y seco",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Quién había escrito el mensaje?",
+      "respuestas": [
+        {
+          "texto": "Snorri Sturluson",
+          "correcta": false
+        },
+        {
+          "texto": "Hans",
+          "correcta": false
+        },
+        {
+          "texto": "Arne Saknussemm",
+          "correcta": true
+        },
+        {
+          "texto": "Axel",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Hacia dónde conducía el camino descrito en el pergamino?",
+      "respuestas": [
+        {
+          "texto": "Hacia un tesoro vikingo",
+          "correcta": false
+        },
+        {
+          "texto": "Hacia el centro de la Tierra",
+          "correcta": true
+        },
+        {
+          "texto": "Hacia una ciudad subterránea",
+          "correcta": false
+        },
+        {
+          "texto": "Hacia un volcán activo",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Cómo se llamaba el volcán islandés?",
+      "respuestas": [
+        {
+          "texto": "Hekla",
+          "correcta": false
+        },
+        {
+          "texto": "Krakatoa",
+          "correcta": false
+        },
+        {
+          "texto": "Etna",
+          "correcta": false
+        },
+        {
+          "texto": "Sneffels",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "texto": "¿Cómo reaccionó el profesor ante el descubrimiento?",
+      "respuestas": [
+        {
+          "texto": "Con miedo",
+          "correcta": false
+        },
+        {
+          "texto": "Con indiferencia",
+          "correcta": false
+        },
+        {
+          "texto": "Con entusiasmo",
+          "correcta": true
+        },
+        {
+          "texto": "Con tristeza",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Qué sintió Axel?",
+      "respuestas": [
+        {
+          "texto": "Alegría",
+          "correcta": false
+        },
+        {
+          "texto": "Curiosidad",
+          "correcta": false
+        },
+        {
+          "texto": "Temor",
+          "correcta": true
+        },
+        {
+          "texto": "Enojo",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Qué comenzó a preparar el profesor?",
+      "respuestas": [
+        {
+          "texto": "Un laboratorio nuevo",
+          "correcta": false
+        },
+        {
+          "texto": "Listas de instrumentos científicos",
+          "correcta": true
+        },
+        {
+          "texto": "Un barco más grande",
+          "correcta": false
+        },
+        {
+          "texto": "Un mapa astronómico",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Qué objetos aparecían en las listas?",
+      "respuestas": [
+        {
+          "texto": "Espadas y escudos",
+          "correcta": false
+        },
+        {
+          "texto": "Libros y pinturas",
+          "correcta": false
+        },
+        {
+          "texto": "Brújulas y lámparas",
+          "correcta": true
+        },
+        {
+          "texto": "Telescopios y relojes",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Qué no dejaba de mencionar el profesor durante el desayuno?",
+      "respuestas": [
+        {
+          "texto": "Montañas y océanos",
+          "correcta": false
+        },
+        {
+          "texto": "Volcanes y túneles subterráneos",
+          "correcta": true
+        },
+        {
+          "texto": "Dinosaurios y fósiles",
+          "correcta": false
+        },
+        {
+          "texto": "Pirámides y desiertos",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Hacia dónde viajaron pocos días después?",
+      "respuestas": [
+        {
+          "texto": "Noruega",
+          "correcta": false
+        },
+        {
+          "texto": "Londres",
+          "correcta": false
+        },
+        {
+          "texto": "Escocia",
+          "correcta": false
+        },
+        {
+          "texto": "Islandia",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "texto": "¿Cómo estaba el puerto?",
+      "respuestas": [
+        {
+          "texto": "Soleado",
+          "correcta": false
+        },
+        {
+          "texto": "Cubierto por una ligera niebla",
+          "correcta": true
+        },
+        {
+          "texto": "Lleno de nieve",
+          "correcta": false
+        },
+        {
+          "texto": "Vacío y silencioso",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Qué balanceaban los barcos junto al muelle?",
+      "respuestas": [
+        {
+          "texto": "Sus anclas",
+          "correcta": false
+        },
+        {
+          "texto": "Sus velas",
+          "correcta": false
+        },
+        {
+          "texto": "Sus mástiles",
+          "correcta": true
+        },
+        {
+          "texto": "Sus cadenas",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Qué sujetaba firmemente el profesor al final del texto?",
+      "respuestas": [
+        {
+          "texto": "Una brújula",
+          "correcta": false
+        },
+        {
+          "texto": "Un mapa volcánico",
+          "correcta": false
+        },
+        {
+          "texto": "El pergamino misterioso",
+          "correcta": true
+        },
+        {
+          "texto": "Una lámpara de aceite",
+          "correcta": false
+        }
+      ]
+    }
+  ]
+}

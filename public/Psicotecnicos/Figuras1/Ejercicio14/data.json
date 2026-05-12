@@ -1,0 +1,12 @@
+﻿{
+  "texto": "En la siguiente serie de figuras elije de entre las opciones de respuesta la figura que debe ocupar el último lugar según el razonamiento lógico de la serie",
+  "pregunta": "pregunta.png",
+  "opciones": [
+    "A.png",
+    "B.png",
+    "C.png",
+    "D.png"
+  ],
+  "correcta": "D",
+  "explicacion": "El cuadrado negro se desplaza progresivamente hacia el centro y la figura en su conjunto una vez se orienta hacia la derecha y otra vez hacia la izquierda y así sucesivamente."
+}

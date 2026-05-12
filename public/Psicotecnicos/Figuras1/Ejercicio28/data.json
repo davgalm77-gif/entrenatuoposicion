@@ -1,0 +1,12 @@
+﻿{
+  "texto": "Escoje de entre las opciones de respuesta la figura que sigue el razonamiento lógico de analogía entre los dos pares de figuras",
+  "pregunta": "pregunta.png",
+  "opciones": [
+    "A.png",
+    "B.png",
+    "C.png",
+    "D.png"
+  ],
+  "correcta": "D",
+  "explicacion": "En cada par de figuras el dibujo de arriba pasa a la posición central, el dibujo central pasa abajo y el dibujo de abajo pasa arriba pero volteado verticalmente."
+}

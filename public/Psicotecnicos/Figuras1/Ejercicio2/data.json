@@ -1,0 +1,12 @@
+﻿{
+  "texto": "En la siguiente serie de figuras elije de entre las opciones de respuesta la figura que sigue el razonamiento lógico de la serie",
+  "pregunta": "pregunta.png",
+  "opciones": [
+    "A.png",
+    "B.png",
+    "C.png",
+    "D.png"
+  ],
+  "correcta": "B",
+  "explicacion": "A medida que nos desplazamos hacia la derecha en cada fila la figura gira 90º en sentido de las agujas del reloj y al mismo tiempo el dibujo blanco y el negro tienden a centrarse hasta quedar totalmente centrados en la tercera columna."
+}

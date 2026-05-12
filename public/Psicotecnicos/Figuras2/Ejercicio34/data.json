@@ -1,0 +1,12 @@
+﻿{
+  "texto": "En esta serie existe una relación objetiva entre sus componentes.",
+  "pregunta": "Debe detectar cuál es dicha relación y elegir aquella figura que no concuerde dentro de ese razonamiento.",
+  "opciones": [
+    "A.png",
+    "B.png",
+    "C.png",
+    "D.png"
+  ],
+  "correcta": "C",
+  "explicacion": "Todas las figuras grandes miran hacia un mismo lado y las pequeñas al otro. En esta figura, una figura grande y una pequeña miran hacia el mismo lado y la otra grande al lado contrario."
+}

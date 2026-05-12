@@ -1,0 +1,425 @@
+﻿{
+  "imagen": "imagen.png",
+  "preguntas": [
+    {
+      "texto": "¿Cuántos semáforos hay en la imagen?",
+      "respuestas": [
+        {
+          "texto": "1",
+          "correcta": false
+        },
+        {
+          "texto": "2",
+          "correcta": false
+        },
+        {
+          "texto": "3",
+          "correcta": false
+        },
+        {
+          "texto": "4",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "texto": "¿Cuántas personas hay en la imagen?",
+      "respuestas": [
+        {
+          "texto": "11",
+          "correcta": false
+        },
+        {
+          "texto": "12",
+          "correcta": false
+        },
+        {
+          "texto": "13",
+          "correcta": false
+        },
+        {
+          "texto": "14",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "texto": "¿Cuántos pinos aparecen?",
+      "respuestas": [
+        {
+          "texto": "9",
+          "correcta": false
+        },
+        {
+          "texto": "10",
+          "correcta": false
+        },
+        {
+          "texto": "11",
+          "correcta": true
+        },
+        {
+          "texto": "12",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "La Calle Tomás Avilés es perpendicular a:",
+      "respuestas": [
+        {
+          "texto": "Calle Los Ángeles",
+          "correcta": true
+        },
+        {
+          "texto": "Avenida del Parlamento",
+          "correcta": false
+        },
+        {
+          "texto": "Ronda Rúa Grande",
+          "correcta": false
+        },
+        {
+          "texto": "Ninguna de las anteriores",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Cuántos animales aparecen en la imagen, sin contar el que se encuentra en el interior del granero?",
+      "respuestas": [
+        {
+          "texto": "2",
+          "correcta": false
+        },
+        {
+          "texto": "3",
+          "correcta": true
+        },
+        {
+          "texto": "4",
+          "correcta": false
+        },
+        {
+          "texto": "5",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "Por la Calle Torres Pardo circula:",
+      "respuestas": [
+        {
+          "texto": "Una moto",
+          "correcta": false
+        },
+        {
+          "texto": "Una bici",
+          "correcta": false
+        },
+        {
+          "texto": "Dos coches",
+          "correcta": true
+        },
+        {
+          "texto": "Un autobús",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "En el Palacio de Justicia hay:",
+      "respuestas": [
+        {
+          "texto": "Dor árboles",
+          "correcta": false
+        },
+        {
+          "texto": "Una cabina",
+          "correcta": true
+        },
+        {
+          "texto": "Un ceda el paso",
+          "correcta": false
+        },
+        {
+          "texto": "Ninguna de las anteriores",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Cuántos vehículos a motor aparecen en la imagen?",
+      "respuestas": [
+        {
+          "texto": "9",
+          "correcta": false
+        },
+        {
+          "texto": "10",
+          "correcta": true
+        },
+        {
+          "texto": "11",
+          "correcta": false
+        },
+        {
+          "texto": "12",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Cuántos árboles que no sean pinos hay en la granja?",
+      "respuestas": [
+        {
+          "texto": "4",
+          "correcta": true
+        },
+        {
+          "texto": "5",
+          "correcta": false
+        },
+        {
+          "texto": "6",
+          "correcta": false
+        },
+        {
+          "texto": "7",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "La bicicleta circula por:",
+      "respuestas": [
+        {
+          "texto": "Calle Torres Pardo",
+          "correcta": false
+        },
+        {
+          "texto": "Calle Los Ángeles",
+          "correcta": false
+        },
+        {
+          "texto": "Calle La Milagrosa",
+          "correcta": true
+        },
+        {
+          "texto": "Paseo Escritos González",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "La Glorieta de la imagen se llama:",
+      "respuestas": [
+        {
+          "texto": "Los Mochos",
+          "correcta": false
+        },
+        {
+          "texto": "Los Tochos",
+          "correcta": false
+        },
+        {
+          "texto": "Los Ochos",
+          "correcta": true
+        },
+        {
+          "texto": "Los Pochos",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "En el parque hay:",
+      "respuestas": [
+        {
+          "texto": "Una pareja",
+          "correcta": false
+        },
+        {
+          "texto": "Una chica con un perro",
+          "correcta": false
+        },
+        {
+          "texto": "Una madre con una hija",
+          "correcta": true
+        },
+        {
+          "texto": "Un hombre",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Cuántos pasos de cebra hay en la imagen?",
+      "respuestas": [
+        {
+          "texto": "1",
+          "correcta": false
+        },
+        {
+          "texto": "2",
+          "correcta": false
+        },
+        {
+          "texto": "3",
+          "correcta": false
+        },
+        {
+          "texto": "4",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "texto": "¿Cuántos caballos aparecen en la granja?",
+      "respuestas": [
+        {
+          "texto": "1",
+          "correcta": false
+        },
+        {
+          "texto": "2",
+          "correcta": false
+        },
+        {
+          "texto": "3",
+          "correcta": true
+        },
+        {
+          "texto": "4",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "En el Hotel Alejandría hay:",
+      "respuestas": [
+        {
+          "texto": "Una persona",
+          "correcta": false
+        },
+        {
+          "texto": "Un árbol",
+          "correcta": false
+        },
+        {
+          "texto": "Un semáforo",
+          "correcta": false
+        },
+        {
+          "texto": "Ninguna de las anteriores",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "texto": "¿Cuántos buzones aparecen en la imagen?",
+      "respuestas": [
+        {
+          "texto": "1",
+          "correcta": false
+        },
+        {
+          "texto": "2",
+          "correcta": true
+        },
+        {
+          "texto": "3",
+          "correcta": false
+        },
+        {
+          "texto": "Ninguno",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Cuántos setos hay alrededor del Hotel?",
+      "respuestas": [
+        {
+          "texto": "4",
+          "correcta": false
+        },
+        {
+          "texto": "5",
+          "correcta": false
+        },
+        {
+          "texto": "6",
+          "correcta": true
+        },
+        {
+          "texto": "7",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "La moto de la imagen se dirige hacia:",
+      "respuestas": [
+        {
+          "texto": "La Glorieta de los Ocho",
+          "correcta": true
+        },
+        {
+          "texto": "Calle Torres Pardo",
+          "correcta": false
+        },
+        {
+          "texto": "Avenida del Parlamento",
+          "correcta": false
+        },
+        {
+          "texto": "Ronda Rúa Grande",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "En el semáforo de la Ronda Rúa Grande hay:",
+      "respuestas": [
+        {
+          "texto": "Un paso de cebra",
+          "correcta": false
+        },
+        {
+          "texto": "Una señal de dirección en el suelo",
+          "correcta": false
+        },
+        {
+          "texto": "Un parque",
+          "correcta": true
+        },
+        {
+          "texto": "Un coche",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "El Stop que aparece en la imagen se encuentra al lado de:",
+      "respuestas": [
+        {
+          "texto": "El Palacio de Justicia",
+          "correcta": true
+        },
+        {
+          "texto": "El Hotel Alejandría",
+          "correcta": false
+        },
+        {
+          "texto": "El parque",
+          "correcta": false
+        },
+        {
+          "texto": "La granja",
+          "correcta": false
+        }
+      ]
+    }
+  ]
+}

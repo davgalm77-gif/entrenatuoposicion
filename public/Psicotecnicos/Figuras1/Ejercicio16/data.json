@@ -1,0 +1,12 @@
+﻿{
+  "texto": "En la siguiente serie de figuras elije de entre las opciones de respuesta la figura que debe ocupar la posición central según el razonamiento lógico de la serie",
+  "pregunta": "pregunta.png",
+  "opciones": [
+    "A.png",
+    "B.png",
+    "C.png",
+    "D.png"
+  ],
+  "correcta": "B",
+  "explicacion": "El cuadrado aumenta de tamaño a medida que el triángulo disminuye, el cuadrado cambia de blanco a negro mientras que el triángulo siempre se mantiene negro. La figura en su conjunto gira cada vez 90º en sentido de las agujas del reloj."
+}

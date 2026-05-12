@@ -1,0 +1,12 @@
+﻿{
+  "texto": "En la siguiente serie de figuras elije de entre las opciones de respuesta la figura que debe ocupar la posición central según el razonamiento lógico de la serie",
+  "pregunta": "pregunta.png",
+  "opciones": [
+    "A.png",
+    "B.png",
+    "C.png",
+    "D.png"
+  ],
+  "correcta": "D",
+  "explicacion": "Los tres círculos giran cada vez 90º en sentido contrario a las agujas del reloj sobre sí mismos y sobre el cuadrado que los contiene, los que son blancos se convierten en negros y viceversa, manteniendo siempre su posición relativa."
+}

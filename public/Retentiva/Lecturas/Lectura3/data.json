@@ -1,0 +1,430 @@
+﻿{
+  "titulo": "La creación",
+
+  "duracionSegundos": 300,
+
+  "archivoTexto": "texto.txt",
+
+  "preguntas": [
+    {
+      "texto": "¿En qué mes contempló Frankenstein el resultado de sus esfuerzos?",
+      "respuestas": [
+        {
+          "texto": "Noviembre",
+          "correcta": true
+        },
+        {
+          "texto": "Octubre",
+          "correcta": false
+        },
+        {
+          "texto": "Enero",
+          "correcta": false
+        },
+        {
+          "texto": "Diciembre",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Qué golpeaba los cristales del apartamento?",
+      "respuestas": [
+        {
+          "texto": "El granizo",
+          "correcta": false
+        },
+        {
+          "texto": "La nieve",
+          "correcta": false
+        },
+        {
+          "texto": "El viento",
+          "correcta": false
+        },
+        {
+          "texto": "La lluvia",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "texto": "¿Qué hora marcaba el reloj aproximadamente?",
+      "respuestas": [
+        {
+          "texto": "Las tres",
+          "correcta": false
+        },
+        {
+          "texto": "Medianoche",
+          "correcta": false
+        },
+        {
+          "texto": "Cerca de la una de la madrugada",
+          "correcta": true
+        },
+        {
+          "texto": "Las dos",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Cómo estaba iluminada la habitación?",
+      "respuestas": [
+        {
+          "texto": "Por luz solar",
+          "correcta": false
+        },
+        {
+          "texto": "Por una chimenea",
+          "correcta": false
+        },
+        {
+          "texto": "Por una vela",
+          "correcta": true
+        },
+        {
+          "texto": "Por lámparas de aceite",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Dónde había conseguido Frankenstein parte de los materiales?",
+      "respuestas": [
+        {
+          "texto": "Hospitales militares",
+          "correcta": false
+        },
+        {
+          "texto": "Salas de disección y laboratorios anatómicos",
+          "correcta": true
+        },
+        {
+          "texto": "Cementerios únicamente",
+          "correcta": false
+        },
+        {
+          "texto": "Bibliotecas",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Cómo era el cabello de la criatura?",
+      "respuestas": [
+        {
+          "texto": "Largo y gris",
+          "correcta": false
+        },
+        {
+          "texto": "Negro y brillante",
+          "correcta": true
+        },
+        {
+          "texto": "Rubio",
+          "correcta": false
+        },
+        {
+          "texto": "Corto y blanco",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Con qué se comparaban los dientes de la criatura?",
+      "respuestas": [
+        {
+          "texto": "Cristal",
+          "correcta": false
+        },
+        {
+          "texto": "Plata",
+          "correcta": false
+        },
+        {
+          "texto": "Perlas",
+          "correcta": true
+        },
+        {
+          "texto": "Marfil",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Qué ocurrió cuando la criatura cobró vida?",
+      "respuestas": [
+        {
+          "texto": "El resultado fue espantoso",
+          "correcta": true
+        },
+        {
+          "texto": "Sonrió inmediatamente",
+          "correcta": false
+        },
+        {
+          "texto": "La habitación se incendió",
+          "correcta": false
+        },
+        {
+          "texto": "Permaneció inmóvil",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿De qué color eran los ojos de la criatura?",
+      "respuestas": [
+        {
+          "texto": "Negros",
+          "correcta": false
+        },
+        {
+          "texto": "Verdes",
+          "correcta": false
+        },
+        {
+          "texto": "Azules",
+          "correcta": false
+        },
+        {
+          "texto": "Amarillentos",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "texto": "¿Qué hizo Frankenstein tras horrorizarse?",
+      "respuestas": [
+        {
+          "texto": "Cerró las ventanas",
+          "correcta": false
+        },
+        {
+          "texto": "Abandonó el laboratorio",
+          "correcta": false
+        },
+        {
+          "texto": "Destruyó la criatura",
+          "correcta": true
+        },
+        {
+          "texto": "Llamó a la policía",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Dónde se dejó caer finalmente?",
+      "respuestas": [
+        {
+          "texto": "Sobre el sofá",
+          "correcta": false
+        },
+        {
+          "texto": "En el suelo",
+          "correcta": false
+        },
+        {
+          "texto": "Sobre la cama",
+          "correcta": true
+        },
+        {
+          "texto": "En una silla",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Con quién soñó Frankenstein?",
+      "respuestas": [
+        {
+          "texto": "Con Henry",
+          "correcta": false
+        },
+        {
+          "texto": "Con Elizabeth",
+          "correcta": true
+        },
+        {
+          "texto": "Con Mary",
+          "correcta": false
+        },
+        {
+          "texto": "Con su padre",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Qué apareció en el sueño en lugar de Elizabeth?",
+      "respuestas": [
+        {
+          "texto": "La criatura",
+          "correcta": false
+        },
+        {
+          "texto": "Un médico",
+          "correcta": false
+        },
+        {
+          "texto": "El cadáver de su padre",
+          "correcta": true
+        },
+        {
+          "texto": "Un esqueleto",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Cómo despertó Frankenstein?",
+      "respuestas": [
+        {
+          "texto": "Sonriendo",
+          "correcta": false
+        },
+        {
+          "texto": "Cubierto de sudor frío",
+          "correcta": true
+        },
+        {
+          "texto": "Enfermo",
+          "correcta": false
+        },
+        {
+          "texto": "Tranquilo",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Dónde estaba la criatura al despertar Frankenstein?",
+      "respuestas": [
+        {
+          "texto": "Junto a la cama",
+          "correcta": true
+        },
+        {
+          "texto": "En la puerta",
+          "correcta": false
+        },
+        {
+          "texto": "Bajo la mesa",
+          "correcta": false
+        },
+        {
+          "texto": "Junto a la ventana",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Qué intentó hacer la criatura?",
+      "respuestas": [
+        {
+          "texto": "Dormirse",
+          "correcta": false
+        },
+        {
+          "texto": "Salir por la ventana",
+          "correcta": false
+        },
+        {
+          "texto": "Hablar",
+          "correcta": true
+        },
+        {
+          "texto": "Atacarle",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Qué hizo Frankenstein después?",
+      "respuestas": [
+        {
+          "texto": "Escribió una carta",
+          "correcta": false
+        },
+        {
+          "texto": "Se encerró en el laboratorio",
+          "correcta": false
+        },
+        {
+          "texto": "Destruyó sus investigaciones",
+          "correcta": false
+        },
+        {
+          "texto": "Huyó a las calles",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "texto": "¿Cómo estaba el cielo a la mañana siguiente?",
+      "respuestas": [
+        {
+          "texto": "Gris y húmedo",
+          "correcta": true
+        },
+        {
+          "texto": "Lleno de nieve",
+          "correcta": false
+        },
+        {
+          "texto": "Soleado",
+          "correcta": false
+        },
+        {
+          "texto": "Despejado",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Qué cruzaba lentamente las calles empedradas?",
+      "respuestas": [
+        {
+          "texto": "Bicicletas",
+          "correcta": false
+        },
+        {
+          "texto": "Carruajes",
+          "correcta": true
+        },
+        {
+          "texto": "Carretas vacías",
+          "correcta": false
+        },
+        {
+          "texto": "Caballos salvajes",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Qué comprendió finalmente Frankenstein?",
+      "respuestas": [
+        {
+          "texto": "Que debía abandonar la ciudad",
+          "correcta": false
+        },
+        {
+          "texto": "Que la criatura era perfecta",
+          "correcta": false
+        },
+        {
+          "texto": "Que debía continuar sus experimentos",
+          "correcta": false
+        },
+        {
+          "texto": "Que la ambición desmedida conduce a la desgracia",
+          "correcta": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,425 @@
+﻿{
+  "imagen": "imagen.png",
+  "preguntas": [
+    {
+      "texto": "¿Cuántos coches aparecen en la imagen?",
+      "respuestas": [
+        {
+          "texto": "3",
+          "correcta": false
+        },
+        {
+          "texto": "4",
+          "correcta": false
+        },
+        {
+          "texto": "5",
+          "correcta": false
+        },
+        {
+          "texto": "6",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "texto": "En Travesía Los Laureles hay una señal de:",
+      "respuestas": [
+        {
+          "texto": "Stop",
+          "correcta": false
+        },
+        {
+          "texto": "Un ceda el paso",
+          "correcta": false
+        },
+        {
+          "texto": "Un semáforo",
+          "correcta": true
+        },
+        {
+          "texto": "No hay ninguna señal",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Cuántas bicicletas aparecen en la imagen?",
+      "respuestas": [
+        {
+          "texto": "1",
+          "correcta": false
+        },
+        {
+          "texto": "2",
+          "correcta": true
+        },
+        {
+          "texto": "3",
+          "correcta": false
+        },
+        {
+          "texto": "4",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Cuántos autobuses aparecen aparcados en la Estación de Autobuses?",
+      "respuestas": [
+        {
+          "texto": "1",
+          "correcta": false
+        },
+        {
+          "texto": "2",
+          "correcta": false
+        },
+        {
+          "texto": "3",
+          "correcta": true
+        },
+        {
+          "texto": "4",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "En Puente Rodil circula:",
+      "respuestas": [
+        {
+          "texto": "Un coche hacia la derecha",
+          "correcta": true
+        },
+        {
+          "texto": "Un coche hacia la izquierda",
+          "correcta": false
+        },
+        {
+          "texto": "Dos coches en la misma dirección",
+          "correcta": false
+        },
+        {
+          "texto": "Dos coches en direcciones opuestas",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Cuántos pinos hay en la imagen?",
+      "respuestas": [
+        {
+          "texto": "8",
+          "correcta": false
+        },
+        {
+          "texto": "9",
+          "correcta": false
+        },
+        {
+          "texto": "10",
+          "correcta": false
+        },
+        {
+          "texto": "11",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "texto": "¿De cuántas columnas consta el teatro?",
+      "respuestas": [
+        {
+          "texto": "4",
+          "correcta": false
+        },
+        {
+          "texto": "5",
+          "correcta": false
+        },
+        {
+          "texto": "6",
+          "correcta": false
+        },
+        {
+          "texto": "7",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "texto": "Por la Calle Menéndez Pelayo circula:",
+      "respuestas": [
+        {
+          "texto": "12",
+          "correcta": false
+        },
+        {
+          "texto": "13",
+          "correcta": true
+        },
+        {
+          "texto": "14",
+          "correcta": false
+        },
+        {
+          "texto": "15",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "La Calle López y Flamenco es perpendicular con:",
+      "respuestas": [
+        {
+          "texto": "Calle Corta",
+          "correcta": false
+        },
+        {
+          "texto": "Calle Menéndez Pelayo",
+          "correcta": true
+        },
+        {
+          "texto": "Calle Los Girasoles",
+          "correcta": false
+        },
+        {
+          "texto": "Calle Nueva",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Cuántos árboles hay que no sean pinos?",
+      "respuestas": [
+        {
+          "texto": "7",
+          "correcta": false
+        },
+        {
+          "texto": "8",
+          "correcta": false
+        },
+        {
+          "texto": "9",
+          "correcta": true
+        },
+        {
+          "texto": "10",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Cuántas personas hay en el Auditórium?",
+      "respuestas": [
+        {
+          "texto": "1",
+          "correcta": false
+        },
+        {
+          "texto": "2",
+          "correcta": false
+        },
+        {
+          "texto": "3",
+          "correcta": true
+        },
+        {
+          "texto": "4",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "En la Calle de Los Girasoles hay:",
+      "respuestas": [
+        {
+          "texto": "Un parque",
+          "correcta": true
+        },
+        {
+          "texto": "Un Auditórium",
+          "correcta": false
+        },
+        {
+          "texto": "La Estación de Autobuses",
+          "correcta": false
+        },
+        {
+          "texto": "Un Restaurante",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Por qué calle circula la grúa?",
+      "respuestas": [
+        {
+          "texto": "Calle Corta",
+          "correcta": false
+        },
+        {
+          "texto": "Calle Nueva",
+          "correcta": false
+        },
+        {
+          "texto": "Calle Menéndez Pelayo",
+          "correcta": false
+        },
+        {
+          "texto": "Calle López y Flamenco",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "texto": "La Gasolinera se encuentra en:",
+      "respuestas": [
+        {
+          "texto": "Calle Nueva",
+          "correcta": false
+        },
+        {
+          "texto": "Calle Corta",
+          "correcta": true
+        },
+        {
+          "texto": "Travesía Los Laureles",
+          "correcta": false
+        },
+        {
+          "texto": "Calle López y Flamenco",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "En los alrededores del restaurante hay:",
+      "respuestas": [
+        {
+          "texto": "Tres personas",
+          "correcta": true
+        },
+        {
+          "texto": "Dos árboles",
+          "correcta": false
+        },
+        {
+          "texto": "Una bicicleta",
+          "correcta": false
+        },
+        {
+          "texto": "Un coche",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Cuántas personas hay en la Estación de Autobuses?",
+      "respuestas": [
+        {
+          "texto": "1",
+          "correcta": false
+        },
+        {
+          "texto": "2",
+          "correcta": true
+        },
+        {
+          "texto": "3",
+          "correcta": false
+        },
+        {
+          "texto": "No hay nadie",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Cuántas señales de dirección se encuentran dibujadas en el suelo?",
+      "respuestas": [
+        {
+          "texto": "1",
+          "correcta": false
+        },
+        {
+          "texto": "2",
+          "correcta": true
+        },
+        {
+          "texto": "3",
+          "correcta": false
+        },
+        {
+          "texto": "4",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "La chica que aparece en la Estación de Autobuses está:",
+      "respuestas": [
+        {
+          "texto": "Sola",
+          "correcta": false
+        },
+        {
+          "texto": "Con una niña",
+          "correcta": false
+        },
+        {
+          "texto": "Con su pareja",
+          "correcta": true
+        },
+        {
+          "texto": "Con un perro",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "La Calle López y Flamenco es paralela a:",
+      "respuestas": [
+        {
+          "texto": "Calle Nueva",
+          "correcta": true
+        },
+        {
+          "texto": "Calle Corta",
+          "correcta": false
+        },
+        {
+          "texto": "Travesía Los Laureles",
+          "correcta": false
+        },
+        {
+          "texto": "Calle Menéndez Pelayo",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Cuántos semáforos aparecen en la imagen?",
+      "respuestas": [
+        {
+          "texto": "1",
+          "correcta": false
+        },
+        {
+          "texto": "2",
+          "correcta": true
+        },
+        {
+          "texto": "3",
+          "correcta": false
+        },
+        {
+          "texto": "Ninguno",
+          "correcta": false
+        }
+      ]
+    }
+  ]
+}

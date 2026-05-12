@@ -1,0 +1,12 @@
+﻿{
+  "texto": "Indica la opción que completa correctamente la secuencia de las fichas de dominó.",
+  "pregunta": "pregunta.png",
+  "opciones": [
+    "6|0",
+    "2|4",
+    "3|5",
+    "0|0"
+  ],
+  "correcta": "A",
+  "explicacion": "5+2↘,0+2↗…; 1–2↗,6–2↘…"
+}

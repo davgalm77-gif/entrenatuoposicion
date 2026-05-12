@@ -1,0 +1,430 @@
+﻿{
+  "titulo": "El diario de Jonathan Harker",
+
+  "duracionSegundos": 300,
+
+  "archivoTexto":  "texto.txt",
+
+  "preguntas": [
+    {
+      "texto": "¿Dónde se encuentra Jonathan al comenzar su escrito?",
+      "respuestas": [
+        {
+          "texto": "Bistritz",
+          "correcta": true
+        },
+        {
+          "texto": "Bestritz",
+          "correcta": false
+        },
+        {
+          "texto": "Münchin",
+          "correcta": false
+        },
+        {
+          "texto": "Münich",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Qué visitó en Londres?",
+      "respuestas": [
+        {
+          "texto": "El puente Tower Bridge",
+          "correcta": false
+        },
+        {
+          "texto": "El Palacio de Buckingham",
+          "correcta": false
+        },
+        {
+          "texto": "El British Museum",
+          "correcta": true
+        },
+        {
+          "texto": "Westminster Abbey",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿En qué hotel pasó una noche?",
+      "respuestas": [
+        {
+          "texto": "Paprika Hotel",
+          "correcta": false
+        },
+        {
+          "texto": "Hotel Royale",
+          "correcta": true
+        },
+        {
+          "texto": "Klausenburg Hotel",
+          "correcta": false
+        },
+        {
+          "texto": "Hotel Cárpatos",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Desde donde salió inicialmente?",
+      "respuestas": [
+        {
+          "texto": "Münich",
+          "correcta": true
+        },
+        {
+          "texto": "Bistritz",
+          "correcta": false
+        },
+        {
+          "texto": "Münchin",
+          "correcta": false
+        },
+        {
+          "texto": "Bestritz",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Entre qué parte del país se encuentra el distrito mencionado por el conde?",
+      "respuestas": [
+        {
+          "texto": "Oriental",
+          "correcta": true
+        },
+        {
+          "texto": "Meridional",
+          "correcta": false
+        },
+        {
+          "texto": "Septentrional",
+          "correcta": false
+        },
+        {
+          "texto": "Occidental",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Dónde se encuentra el hotel donde hace noche?",
+      "respuestas": [
+        {
+          "texto": "Bistritz",
+          "correcta": false
+        },
+        {
+          "texto": "Bucovina",
+          "correcta": false
+        },
+        {
+          "texto": "Paprika",
+          "correcta": false
+        },
+        {
+          "texto": "Klausenburg",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "texto": "Estudió los libros y mapas referidos a…",
+      "respuestas": [
+        {
+          "texto": "Moldavia",
+          "correcta": false
+        },
+        {
+          "texto": "Cárpatos",
+          "correcta": false
+        },
+        {
+          "texto": "Bucovina",
+          "correcta": false
+        },
+        {
+          "texto": "Transilvania",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "texto": "¿Cuál le parece un lugar maravilloso?",
+      "respuestas": [
+        {
+          "texto": "Budapest",
+          "correcta": true
+        },
+        {
+          "texto": "Münich",
+          "correcta": false
+        },
+        {
+          "texto": "Bucovina",
+          "correcta": false
+        },
+        {
+          "texto": "Bestritz",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Qué ingredientes lleva el plato nacional que cena en el hotel?",
+      "respuestas": [
+        {
+          "texto": "Pollo y pimentón rojo",
+          "correcta": true
+        },
+        {
+          "texto": "Pavo y pimienta negra",
+          "correcta": false
+        },
+        {
+          "texto": "Pavo y pimentón rojo",
+          "correcta": false
+        },
+        {
+          "texto": "Pollo y pimienta negra",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Entre qué estados se encontraba el distrito mencionado por el conde?",
+      "respuestas": [
+        {
+          "texto": "Transilvania, Cárpatos y Bucovina",
+          "correcta": false
+        },
+        {
+          "texto": "Transilvania, MoldaviayCárpatos",
+          "correcta": false
+        },
+        {
+          "texto": "Transilvania, Moldavia y Bucovina",
+          "correcta": true
+        },
+        {
+          "texto": "Transilvania, KlausenburgyBucovina",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿A qué hora debía haber llegado el tren a Viena?",
+      "respuestas": [
+        {
+          "texto": "A las siete cuarenta y seis",
+          "correcta": false
+        },
+        {
+          "texto": "A las 6:46",
+          "correcta": true
+        },
+        {
+          "texto": "A las 7:46",
+          "correcta": false
+        },
+        {
+          "texto": "A las 8:46",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Cómo se llama el plato que cena en el hotel?",
+      "respuestas": [
+        {
+          "texto": "Paprika hendl",
+          "correcta": true
+        },
+        {
+          "texto": "Chiken hendl",
+          "correcta": false
+        },
+        {
+          "texto": "Paprika royale",
+          "correcta": false
+        },
+        {
+          "texto": "Huhn royale",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Cómo se llaman los montes referenciados?",
+      "respuestas": [
+        {
+          "texto": "Klausenburg",
+          "correcta": false
+        },
+        {
+          "texto": "Cárpatos",
+          "correcta": true
+        },
+        {
+          "texto": "Balcanes",
+          "correcta": false
+        },
+        {
+          "texto": "Pirineos",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿En qué fecha comienza Jonathan su escrito?",
+      "respuestas": [
+        {
+          "texto": "Seis de Mayo",
+          "correcta": false
+        },
+        {
+          "texto": "3 de Mayo",
+          "correcta": true
+        },
+        {
+          "texto": "5 de Marzo",
+          "correcta": false
+        },
+        {
+          "texto": "Tres de Marzo",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Sobre qué río se levanta el puente que cruza?",
+      "respuestas": [
+        {
+          "texto": "Volga",
+          "correcta": false
+        },
+        {
+          "texto": "Bistritz",
+          "correcta": false
+        },
+        {
+          "texto": "Cárpatos",
+          "correcta": false
+        },
+        {
+          "texto": "Danubio",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "texto": "¿De qué idioma tenía Jonathan escasos conocimientos?",
+      "respuestas": [
+        {
+          "texto": "Moldavo",
+          "correcta": false
+        },
+        {
+          "texto": "Turco",
+          "correcta": false
+        },
+        {
+          "texto": "Griego",
+          "correcta": false
+        },
+        {
+          "texto": "Alemán",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "texto": "¿Cómo se llama la mujer a quién le relatará sus vivencias?",
+      "respuestas": [
+        {
+          "texto": "Johana",
+          "correcta": false
+        },
+        {
+          "texto": "Mina",
+          "correcta": true
+        },
+        {
+          "texto": "Milly",
+          "correcta": false
+        },
+        {
+          "texto": "Anna",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿De qué no pudo saber la localización exacta?",
+      "respuestas": [
+        {
+          "texto": "La posada Cárpatos",
+          "correcta": false
+        },
+        {
+          "texto": "El castillo de Drácula",
+          "correcta": true
+        },
+        {
+          "texto": "El pueblo Bistritz",
+          "correcta": false
+        },
+        {
+          "texto": "La biblioteca de Transilvania",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿A qué hora salió inicialmente?",
+      "respuestas": [
+        {
+          "texto": "A las 20:25",
+          "correcta": false
+        },
+        {
+          "texto": "A las 8:25 de la noche",
+          "correcta": false
+        },
+        {
+          "texto": "A las 8:35 de la noche",
+          "correcta": true
+        },
+        {
+          "texto": "A las 8:35",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Cómo se llama el conde?",
+      "respuestas": [
+        {
+          "texto": "Klausenburg",
+          "correcta": false
+        },
+        {
+          "texto": "Transilvania",
+          "correcta": false
+        },
+        {
+          "texto": "Drácula",
+          "correcta": true
+        },
+        {
+          "texto": "Stoker",
+          "correcta": false
+        }
+      ]
+    }
+  ]
+}
