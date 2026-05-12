@@ -23,7 +23,7 @@ function MantenimientoPage() {
 
           </h1>
 
-          <p className="text-slate-400 text-2xl mt-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-400 text-3xl mt-8 max-w-2xl mx-auto leading-relaxed">
 
             Plataforma en desarrollo
 
