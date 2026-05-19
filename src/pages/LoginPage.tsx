@@ -1,4 +1,15 @@
-import { Link } from "react-router-dom"
+import {
+  GoogleLogin
+} from "@react-oauth/google"
+import {
+  Link,
+  useNavigate
+} from "react-router-dom"
+import {
+  useState,
+  useRef,
+  useEffect
+} from "react"
 
 import {
   Mail,
@@ -12,6 +23,116 @@ import { Button } from "../components/ui/button"
 import { Input } from "../components/ui/input"
 
 function LoginPage() {
+
+const [email, setEmail] = useState("")
+
+const [password, setPassword] = useState("")
+
+const [error, setError] =
+  useState("")
+
+const navigate = useNavigate()
+
+useEffect(() => {
+
+  const token =
+    localStorage.getItem("token")
+
+  if (token) {
+
+    navigate("/dashboard")
+  }
+
+}, [])
+
+const googleButtonRef =
+  useRef<HTMLDivElement>(null)
+
+const handleLogin = async () => {
+
+  setError("")
+
+if (!email.trim() || !password.trim()) {
+
+  setError(
+    "Introduce tu correo y contraseña o continúa con Google."
+  )
+
+  return
+}
+
+  try {
+
+    const response = await fetch(
+      `${import.meta.env.VITE_API_URL}/api/Auth/login`,
+      {
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+          email,
+          password
+        })
+      }
+    )
+
+    if (!response.ok) {
+
+  setError(
+    "Correo o contraseña incorrectos."
+  )
+
+  return
+}
+
+    const data = await response.json()
+
+    localStorage.setItem(
+  "token",
+  data.token
+)
+
+const meResponse = await fetch(
+  `${import.meta.env.VITE_API_URL}/api/Auth/me`,
+  {
+    headers: {
+      Authorization:
+        `Bearer ${data.token}`
+    }
+  }
+)
+
+const meData =
+  await meResponse.json()
+
+if (
+  meData.oposiciones.length === 0
+) {
+
+  navigate("/seleccionar-oposicion")
+
+} else if (
+  meData.oposiciones.length === 1
+) {
+
+  navigate("/dashboard")
+
+} else {
+
+  navigate("/seleccionar-oposicion")
+}
+
+console.log(data)
+  } catch (error) {
+
+    console.log(error)
+
+  }
+
+}
 
   return (
 
@@ -36,13 +157,120 @@ function LoginPage() {
         <div className="mt-8 space-y-3">
 
           {/* GOOGLE */}
-          <button className="w-full h-12 rounded-2xl bg-white hover:bg-slate-200 transition flex items-center justify-center gap-3 text-black text-base font-semibold">
+          <div className="relative">
 
-            <FcGoogle size={22} />
+  {/* BOTÓN BONITO */}
+  <button
 
-            Continuar con Google
+    onClick={() => {
 
-          </button>
+      const googleButton =
+        googleButtonRef.current
+          ?.querySelector(
+            "div[role=button]"
+          ) as HTMLElement
+
+      googleButton?.click()
+    }}
+
+    className="w-full h-12 rounded-2xl bg-white hover:bg-slate-200 transition flex items-center justify-center gap-3 text-black text-base font-semibold"
+  >
+
+    <FcGoogle size={22} />
+
+    Continuar con Google
+
+  </button>
+
+  {/* GOOGLE REAL OCULTO */}
+  <div
+    ref={googleButtonRef}
+
+    className="absolute inset-0 opacity-0 pointer-events-none"
+  >
+
+    <GoogleLogin
+      onSuccess={async (
+        credentialResponse
+      ) => {
+
+        try {
+
+          const response = await fetch(
+            `${import.meta.env.VITE_API_URL}/api/Auth/google-login`,
+            {
+              method: "POST",
+
+              headers: {
+                "Content-Type":
+                  "application/json"
+              },
+
+              body: JSON.stringify({
+                credential:
+                  credentialResponse.credential
+              })
+            }
+          )
+
+          const data =
+            await response.json()
+
+          localStorage.setItem(
+  "token",
+  data.token
+)
+
+const meResponse = await fetch(
+  `${import.meta.env.VITE_API_URL}/api/Auth/me`,
+  {
+    headers: {
+      Authorization:
+        `Bearer ${data.token}`
+    }
+  }
+)
+
+const meData =
+  await meResponse.json()
+
+if (
+  meData.oposiciones.length === 0
+) {
+
+  navigate("/seleccionar-oposicion")
+
+} else if (
+  meData.oposiciones.length === 1
+) {
+
+  navigate("/dashboard")
+
+} else {
+
+  navigate("/seleccionar-oposicion")
+}
+
+        } catch (error) {
+
+          console.log(error)
+
+        }
+
+      }}
+
+      onError={() => {
+
+        console.log(
+          "Google login error"
+        )
+
+      }}
+    />
+
+  </div>
+
+</div>
 
           {/* FACEBOOK */}
           <button className="w-full h-12 rounded-2xl bg-[#1877F2] hover:opacity-90 transition flex items-center justify-center gap-3 text-white text-base font-semibold">
@@ -84,9 +312,16 @@ function LoginPage() {
             />
 
             <Input
-              placeholder="Correo electrónico"
-              className="h-12 pl-12 bg-slate-950 border-slate-700 text-white rounded-2xl text-base"
-            />
+  value={email}
+
+  onChange={(e) =>
+    setEmail(e.target.value)
+  }
+
+  placeholder="Correo electrónico"
+
+  className="h-12 pl-12 bg-slate-950 border-slate-700 text-white rounded-2xl text-base"
+/>
 
           </div>
 
@@ -99,10 +334,18 @@ function LoginPage() {
             />
 
             <Input
-              type="password"
-              placeholder="Contraseña"
-              className="h-12 pl-12 bg-slate-950 border-slate-700 text-white rounded-2xl text-base"
-            />
+  value={password}
+
+  onChange={(e) =>
+    setPassword(e.target.value)
+  }
+
+  type="password"
+
+  placeholder="Contraseña"
+
+  className="h-12 pl-12 bg-slate-950 border-slate-700 text-white rounded-2xl text-base"
+/>
 
           </div>
 
@@ -119,12 +362,25 @@ function LoginPage() {
 
         </div>
 
-        {/* BOTON */}
-        <Button className="w-full h-12 mt-7 rounded-2xl text-base font-bold bg-cyan-500 hover:bg-cyan-400 text-black">
+        {error && (
 
-          Iniciar sesión
+  <div className="mt-5 bg-red-500/10 border border-red-500/30 text-red-400 rounded-2xl px-4 py-3 text-sm font-medium">
 
-        </Button>
+    {error}
+
+  </div>
+
+)}
+
+        <Button
+  onClick={handleLogin}
+
+  className="w-full h-12 mt-7 rounded-2xl text-base font-bold bg-cyan-500 hover:bg-cyan-400 text-black"
+>
+
+  Iniciar sesión
+
+</Button>
 
         {/* REGISTER */}
         <div className="mt-7 text-center text-sm text-slate-500">

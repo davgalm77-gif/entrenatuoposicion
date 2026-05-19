@@ -4,18 +4,104 @@ import {
   Lock,
 } from "lucide-react"
 
-import {
-  FcGoogle,
-} from "react-icons/fc"
 
 import {
-  FaFacebook,
-} from "react-icons/fa"
+  useState,
+  useEffect
+} from "react"
+
+import {
+  useNavigate
+} from "react-router-dom"
 
 import { Button } from "../components/ui/button"
 import { Input } from "../components/ui/input"
 
 function RegisterPage() {
+
+  const navigate = useNavigate()
+
+  useEffect(() => {
+
+  const token =
+    localStorage.getItem("token")
+
+  if (token) {
+
+    navigate("/dashboard")
+  }
+
+}, [])
+
+  const [username, setUsername]
+  = useState("")
+
+const [email, setEmail] = useState("")
+
+const [password, setPassword] = useState("")
+
+const handleRegister = async () => {
+
+  try {
+
+    const response = await fetch(
+      `${import.meta.env.VITE_API_URL}/api/Auth/register`,
+      {
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+  username,
+  email,
+  password
+})
+      }
+    )
+
+    if (!response.ok) {
+
+      alert("Error al registrarse")
+
+      return
+    }
+
+    const loginResponse = await fetch(
+      `${import.meta.env.VITE_API_URL}/api/Auth/login`,
+      {
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+  username,
+  email,
+  password
+})
+      }
+    )
+
+    const loginData =
+      await loginResponse.json()
+
+    localStorage.setItem(
+      "token",
+      loginData.token
+    )
+
+    navigate("/seleccionar-oposicion")
+
+  } catch (error) {
+
+    console.log(error)
+
+  }
+
+}
 
   return (
 
@@ -36,48 +122,10 @@ function RegisterPage() {
 
         </div>
 
-        {/* LOGIN SOCIAL */}
-        <div className="mt-8 space-y-3">
-
-          {/* GOOGLE */}
-          <button className="w-full h-12 rounded-2xl bg-white hover:bg-slate-200 transition flex items-center justify-center gap-3 text-black text-base font-semibold">
-
-            <FcGoogle size={22} />
-
-            Continuar con Google
-
-          </button>
-
-          {/* FACEBOOK */}
-          <button className="w-full h-12 rounded-2xl bg-[#1877F2] hover:opacity-90 transition flex items-center justify-center gap-3 text-white text-base font-semibold">
-
-            <FaFacebook size={20} />
-
-            Continuar con Facebook
-
-          </button>
-
-        </div>
-
-        {/* SEPARADOR */}
-        <div className="relative my-8">
-
-          <div className="border-t border-slate-800"></div>
-
-          <div className="absolute inset-0 flex justify-center">
-
-            <span className="bg-slate-900 px-4 text-slate-500 text-[11px] uppercase tracking-widest">
-
-              o continuar con email
-
-            </span>
-
-          </div>
-
-        </div>
+        <div className="mt-6"></div>
 
         {/* FORMULARIO */}
-        <div className="space-y-4">
+        <div className="space-y-5">
 
           {/* USUARIO */}
           <div className="relative">
@@ -88,9 +136,16 @@ function RegisterPage() {
             />
 
             <Input
-              placeholder="Nombre de usuario"
-              className="h-12 pl-12 bg-slate-950 border-slate-700 text-white rounded-2xl text-base"
-            />
+  value={username}
+
+  onChange={(e) =>
+    setUsername(e.target.value)
+  }
+
+  placeholder="Nombre de usuario"
+
+  className="h-12 pl-12 bg-slate-950 border-slate-700 text-white rounded-2xl text-base"
+/>
 
           </div>
 
@@ -103,9 +158,16 @@ function RegisterPage() {
             />
 
             <Input
-              placeholder="Correo electrónico"
-              className="h-12 pl-12 bg-slate-950 border-slate-700 text-white rounded-2xl text-base"
-            />
+  value={email}
+
+  onChange={(e) =>
+    setEmail(e.target.value)
+  }
+
+  placeholder="Correo electrónico"
+
+  className="h-12 pl-12 bg-slate-950 border-slate-700 text-white rounded-2xl text-base"
+/>
 
           </div>
 
@@ -118,10 +180,18 @@ function RegisterPage() {
             />
 
             <Input
-              type="password"
-              placeholder="Contraseña"
-              className="h-12 pl-12 bg-slate-950 border-slate-700 text-white rounded-2xl text-base"
-            />
+  value={password}
+
+  onChange={(e) =>
+    setPassword(e.target.value)
+  }
+
+  type="password"
+
+  placeholder="Contraseña"
+
+  className="h-12 pl-12 bg-slate-950 border-slate-700 text-white rounded-2xl text-base"
+/>
 
           </div>
 
@@ -141,28 +211,18 @@ function RegisterPage() {
 
           </div>
 
-        </div>
-
-        {/* OPOSICION */}
-        <div className="mt-8">
-
-          <p className="text-slate-500 text-[11px] uppercase tracking-widest mb-4">
-            Primera oposición
-          </p>
-
-          <Input
-            placeholder="Nombre de tu oposición"
-            className="h-12 bg-slate-950 border-slate-700 text-white rounded-2xl text-base"
-          />
-
-        </div>
+        </div>     
 
         {/* BOTON */}
-        <Button className="w-full h-12 mt-8 rounded-2xl text-base font-bold bg-cyan-500 hover:bg-cyan-400 text-black">
+        <Button
+  onClick={handleRegister}
 
-          Crear cuenta
+  className="w-full h-12 mt-8 rounded-2xl text-base font-bold bg-cyan-500 hover:bg-cyan-400 text-black"
+>
 
-        </Button>
+  Crear cuenta
+
+</Button>
 
       </div>
 

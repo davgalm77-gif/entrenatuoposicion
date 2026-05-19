@@ -1,5 +1,12 @@
-import { ReactNode } from "react"
-import { Link } from "react-router-dom"
+import {
+  ReactNode,
+  useEffect,
+  useState
+} from "react"
+import {
+  Link,
+  useNavigate
+} from "react-router-dom"
 
 
 import {
@@ -25,6 +32,114 @@ type Props = {
 }
 
 function DashboardLayout({ children }: Props) {
+
+  const navigate = useNavigate()
+
+  const [usuario, setUsuario]
+  = useState<any>(null)
+
+  const [
+  mostrarModalOposicion,
+
+  setMostrarModalOposicion
+
+] = useState(false)
+
+const [
+  nuevaOposicion,
+
+  setNuevaOposicion
+
+] = useState("")
+
+  const handleLogout = () => {
+
+  localStorage.removeItem(
+    "token"
+  )
+
+  navigate("/login")
+}
+
+const handleCrearOposicion =
+  async () => {
+
+    if (!nuevaOposicion.trim()) {
+      return
+    }
+
+    const token =
+      localStorage.getItem("token")
+
+    await fetch(
+      `${import.meta.env.VITE_API_URL}/api/Auth/oposiciones`,
+      {
+        method: "POST",
+
+        headers: {
+          "Content-Type":
+            "application/json",
+
+          Authorization:
+            `Bearer ${token}`
+        },
+
+        body: JSON.stringify({
+          nombre:
+            nuevaOposicion
+        })
+      }
+    )
+
+    setMostrarModalOposicion(
+      false
+    )
+
+    setNuevaOposicion("")
+
+    window.location.reload()
+}
+
+  useEffect(() => {
+
+    const token =
+  localStorage.getItem("token")
+
+if (!token) {
+
+  navigate("/login")
+
+  return
+}
+
+  const fetchUsuario = async () => {
+
+    const token =
+      localStorage.getItem("token")
+
+    const response = await fetch(
+      `${import.meta.env.VITE_API_URL}/api/Auth/me`,
+      {
+        headers: {
+          Authorization:
+            `Bearer ${token}`
+        }
+      }
+    )
+
+    const data =
+      await response.json()
+
+      console.log(data)
+
+    setUsuario(data)
+
+    
+  }
+
+  fetchUsuario()
+
+}, [])
 
 
   return (
@@ -78,7 +193,7 @@ function DashboardLayout({ children }: Props) {
   <Zap className="text-yellow-400" size={24} />
 
   <span className="text-2xl font-semibold">
-    5 créditos
+    {usuario?.creditos} créditos
   </span>
 
 </Link>
@@ -86,10 +201,30 @@ function DashboardLayout({ children }: Props) {
           {/* PERFIL */}
           <div className="bg-slate-900 border border-slate-800 rounded-2xl px-6 py-4 flex items-center gap-3">
 
-            <UserCircle2 size={36} />
+            {usuario?.fotoPerfil ? (
+
+  <img
+    src={usuario.fotoPerfil}
+    alt="Perfil"
+
+    className="w-12 h-12 rounded-full object-cover"
+  />
+
+) : (
+
+  <div className="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center">
+
+    <UserCircle2
+      size={28}
+      className="text-slate-300"
+    />
+
+  </div>
+
+)}
 
             <span className="text-2xl">
-              David
+              {usuario?.username}
             </span>
 
           </div>
@@ -128,10 +263,11 @@ function DashboardLayout({ children }: Props) {
 
   <h2 className="text-xl font-bold text-white">
     
-    Técnico de Procesos
+    {usuario?.oposicionActiva?.nombre}
   </h2>
 
 </div>
+
 
           <div className="flex flex-col gap-10">
 
@@ -275,15 +411,60 @@ function DashboardLayout({ children }: Props) {
 
           </div>
 
+          {/* OPOSICIONES */}
+<div className="mt-10">
+
+  <p className="text-slate-500 text-sm uppercase tracking-widest mb-5">
+    Oposiciones
+  </p>
+
+  <div className="flex flex-col gap-2">
+
+    <button
+
+  onClick={() =>
+    navigate(
+      "/seleccionar-oposicion"
+    )
+  }
+
+  className="flex items-center gap-4 px-5 py-4 rounded-2xl hover:bg-slate-900 transition text-xl"
+>
+
+  <RotateCcw size={20} />
+
+  Cambiar oposición
+
+</button>
+
+    <button
+
+    onClick={() =>
+    setMostrarModalOposicion(true)
+  }
+      className="flex items-center gap-4 px-5 py-4 rounded-2xl hover:bg-slate-900 transition text-xl"
+    >
+
+      <Check size={20} />
+
+      Nueva oposición
+
+    </button>
+
+  </div>
+
+</div>
+
           {/* INFERIOR */}
           <div className="mt-16 pt-8 border-t border-slate-800 flex flex-col gap-3">
 
-            <button className="flex items-center gap-4 px-5 py-4 rounded-2xl hover:bg-slate-900 transition text-xl">
-              <RotateCcw size={20} />
-              Cambiar oposición
-            </button>
 
-            <button className="flex items-center gap-4 px-5 py-4 rounded-2xl hover:bg-slate-900 transition text-xl">
+            <button
+
+  onClick={handleLogout}
+
+  className="flex items-center gap-4 px-5 py-4 rounded-2xl hover:bg-slate-900 transition text-xl"
+>
               <LogOut size={20} />
               Salir
             </button>
@@ -300,7 +481,71 @@ function DashboardLayout({ children }: Props) {
         </main>
 
       </div>
+{mostrarModalOposicion && (
 
+  <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50">
+
+    <div className="w-full max-w-md bg-slate-900 border border-slate-800 rounded-3xl p-8">
+
+      <h2 className="text-3xl font-black text-white">
+        Nueva oposición
+      </h2>
+
+      <p className="text-slate-400 mt-3 leading-relaxed">
+        Crea una nueva oposición para empezar a organizar
+        tus temarios, tests y progreso.
+      </p>
+
+      <input
+        value={nuevaOposicion}
+
+        onChange={(e) =>
+          setNuevaOposicion(
+            e.target.value
+          )
+        }
+
+        placeholder="Nombre de la oposición"
+
+        className="w-full h-12 mt-8 px-5 rounded-2xl bg-slate-950 border border-slate-700 text-white outline-none"
+      />
+
+      <div className="flex gap-3 mt-8">
+
+        <button
+
+          onClick={() => {
+
+            setMostrarModalOposicion(
+              false
+            )
+
+            setNuevaOposicion("")
+          }}
+
+          className="flex-1 h-12 rounded-2xl bg-slate-800 hover:bg-slate-700 transition font-semibold"
+        >
+
+          Cancelar
+
+        </button>
+
+        <button
+        onClick={handleCrearOposicion}
+          className="flex-1 h-12 rounded-2xl bg-cyan-500 hover:bg-cyan-400 transition text-black font-bold"
+        >
+
+          Crear
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+)}
     </div>
   )
 }
