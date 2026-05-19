@@ -1,0 +1,2 @@
+file 'C:/Users/davga/PreparaTuOposicion/backend/entrenatuoposicionAPI/wwwroot/podcasts/31ef9207-3be6-4223-9238-cec22efc7ee0/temp_1.mp3'
+file 'C:/Users/davga/PreparaTuOposicion/backend/entrenatuoposicionAPI/wwwroot/podcasts/31ef9207-3be6-4223-9238-cec22efc7ee0/temp_2.mp3'
