@@ -36,7 +36,7 @@ function App() {
   window.location.hostname === "localhost"
 
 const apiUrl =
-  "http://localhost:5183"
+  import.meta.env.VITE_API_URL
   
 
   const [isLogged, setIsLogged] =
