@@ -527,6 +527,10 @@ public async Task<IActionResult> ProcesarIA(
     var temasDetectados =
         new List<Tema>();
 
+        int totalPromptTokens = 0;
+        int totalCompletionTokens = 0;
+        int totalTokens = 0;
+
     var matches =
         Regex.Matches(
             textoCompleto,
@@ -603,6 +607,18 @@ Console.WriteLine("1 - Generando guion...");
                 prompt
             );
 
+            var usage =
+    completion.Value.Usage;
+
+totalPromptTokens +=
+    usage.InputTokenCount;
+
+totalCompletionTokens +=
+    usage.OutputTokenCount;
+
+totalTokens +=
+    usage.TotalTokenCount;
+
             Console.WriteLine("2 - Guion generado");
 
         titulo =
@@ -660,7 +676,17 @@ Console.WriteLine("1 - Generando guion...");
 
     await _context.SaveChangesAsync();
 
-    return Ok();
+    return Ok(new
+{
+    promptTokens =
+        totalPromptTokens,
+
+    completionTokens =
+        totalCompletionTokens,
+
+    totalTokens =
+        totalTokens
+});
 }
 
 [HttpGet("{id}/temas")]
@@ -780,6 +806,18 @@ var completion =
         prompt
     );
 
+    var usage =
+    completion.Value.Usage;
+
+int promptTokens =
+    usage.InputTokenCount;
+
+int completionTokens =
+    usage.OutputTokenCount;
+
+int totalTokens =
+    usage.TotalTokenCount;
+
 var contenidoResumen =
     completion.Value.Content[0]
         .Text
@@ -819,12 +857,16 @@ var contenidoResumen =
     await _context.SaveChangesAsync();
 
     return Ok(new
-    {
-        resumen.Id,
-        resumen.Titulo,
-        resumen.NumeroTemas,
-        resumen.Paginas
-    });
+{
+    resumen.Id,
+    resumen.Titulo,
+    resumen.NumeroTemas,
+    resumen.Paginas,
+
+    promptTokens,
+    completionTokens,
+    totalTokens
+});
 }
 
 [HttpGet("{id}/resumenes")]
@@ -997,6 +1039,7 @@ var completion =
     chatClient.CompleteChat(
         prompt
     );
+    
 
 var guionPodcast =
     completion.Value.Content[0]
@@ -1242,6 +1285,43 @@ if (proceso.ExitCode != 0)
     );
 }
 
+var probe =
+    new System.Diagnostics.Process();
+
+probe.StartInfo.FileName =
+    "ffprobe";
+
+probe.StartInfo.Arguments =
+    $"-i \"{rutaArchivo}\" -show_entries format=duration -v quiet -of csv=\"p=0\"";
+
+probe.StartInfo.UseShellExecute =
+    false;
+
+probe.StartInfo.RedirectStandardOutput =
+    true;
+
+probe.StartInfo.CreateNoWindow =
+    true;
+
+probe.Start();
+
+var output =
+    await probe.StandardOutput
+        .ReadToEndAsync();
+
+await probe.WaitForExitAsync();
+
+double segundos =
+    double.Parse(
+        output.Trim(),
+        System.Globalization.CultureInfo.InvariantCulture
+    );
+
+int minutos =
+    (int)Math.Ceiling(
+        segundos / 60
+    );
+
 var podcast = new Podcast
 {
     Titulo =
@@ -1255,8 +1335,6 @@ var podcast = new Podcast
 
     ArchivoMP3Path =
         $"/podcasts/{nombreArchivo}",
-
-    DuracionMinutos = 12,
 
     FechaCreacion =
         DateTime.UtcNow
