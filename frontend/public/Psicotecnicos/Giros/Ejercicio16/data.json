@@ -1,0 +1,11 @@
+﻿{
+  "texto": "¿Qué opción muestra la misma figura girada?",
+  "pregunta": "pregunta.png",
+  "opciones": [
+    "A.png",
+    "B.png",
+    "C.png",
+    "D.png"
+  ],
+  "correcta": "C"
+}

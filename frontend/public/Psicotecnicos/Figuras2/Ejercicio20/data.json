@@ -1,0 +1,12 @@
+﻿{
+  "texto": "En esta serie existe una relación objetiva entre sus componentes.",
+  "pregunta": "Debe detectar cuál es dicha relación y elegir aquella figura que no concuerde dentro de ese razonamiento.",
+  "opciones": [
+    "A.png",
+    "B.png",
+    "C.png",
+    "D.png"
+  ],
+  "correcta": "B",
+  "explicacion": "No están contiguos los cuadrados rellenados (color liso y en rayas). En las figuras a), c) y d), los cuadros lisos y rayados están en la misma línea vertical u horizontal, y los cuadros (liso y rayado) de la figura b), están en diagonal."
+}

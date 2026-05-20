@@ -1,0 +1,12 @@
+﻿{
+  "texto": "En esta serie existe una relación objetiva entre sus componentes.",
+  "pregunta": "Debe detectar cuál es dicha relación y elegir aquella figura que no concuerde dentro de ese razonamiento.",
+  "opciones": [
+    "A.png",
+    "B.png",
+    "C.png",
+    "D.png"
+  ],
+  "correcta": "C",
+  "explicacion": "Todas las figuras están formadas por dos líneas que las cruzan por el mismo lado, salvo esta."
+}

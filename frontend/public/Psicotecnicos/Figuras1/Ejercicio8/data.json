@@ -1,0 +1,12 @@
+﻿{
+  "texto": "En la siguiente serie de figuras elije de entre las opciones de respuesta la figura que debe ocupar el último lugar según el razonamiento lógico de la serie",
+  "pregunta": "pregunta.png",
+  "opciones": [
+    "A.png",
+    "B.png",
+    "C.png",
+    "D.png"
+  ],
+  "correcta": "A",
+  "explicacion": "Partiendo de la primera figura el triángulo grande gira cada vez 90º en sentido de las agujas del reloj. El triángulo pequeño aumenta progresivamente su tamaño y cuando se solapa con el grande se sitúa siempre delante de éste."
+}

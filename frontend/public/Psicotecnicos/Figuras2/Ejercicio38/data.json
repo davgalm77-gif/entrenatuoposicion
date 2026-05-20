@@ -1,0 +1,12 @@
+﻿{
+  "texto": "En esta serie existe una relación objetiva entre sus componentes.",
+  "pregunta": "Debe detectar cuál es dicha relación y elegir aquella figura que no concuerde dentro de ese razonamiento.",
+  "opciones": [
+    "A.png",
+    "B.png",
+    "C.png",
+    "D.png"
+  ],
+  "correcta": "A",
+  "explicacion": "Todas las figuras son las mismas menos esta. En todas las figuras se observa una línea recta junto a un círculo, en la opción a) la línea recta atraviesa el círculo."
+}

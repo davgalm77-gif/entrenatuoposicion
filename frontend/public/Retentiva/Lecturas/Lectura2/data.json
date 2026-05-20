@@ -1,0 +1,430 @@
+﻿{
+  "titulo": "Un escollo fugitivo",
+
+  "duracionSegundos": 300,
+
+  "archivoTexto": "texto.txt",
+
+  "preguntas": [
+    {
+      "texto": "¿En qué año ocurrieron los acontecimientos?",
+      "respuestas": [
+        {
+          "texto": "1854",
+          "correcta": false
+        },
+        {
+          "texto": "1866",
+          "correcta": true
+        },
+        {
+          "texto": "1872",
+          "correcta": false
+        },
+        {
+          "texto": "1880",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Cómo describían los barcos a la criatura?",
+      "respuestas": [
+        {
+          "texto": "Pequeña y oscura",
+          "correcta": false
+        },
+        {
+          "texto": "Redonda y metálica",
+          "correcta": false
+        },
+        {
+          "texto": "Gigantesca, alargada y luminosa",
+          "correcta": true
+        },
+        {
+          "texto": "Verde y silenciosa",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Dónde se extendió rápidamente la noticia?",
+      "respuestas": [
+        {
+          "texto": "Solo en Francia",
+          "correcta": false
+        },
+        {
+          "texto": "En Asia y África",
+          "correcta": false
+        },
+        {
+          "texto": "En Europa y América",
+          "correcta": true
+        },
+        {
+          "texto": "En Australia únicamente",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Qué creían algunos sobre la criatura?",
+      "respuestas": [
+        {
+          "texto": "Que era una isla flotante",
+          "correcta": false
+        },
+        {
+          "texto": "Que era una máquina submarina",
+          "correcta": true
+        },
+        {
+          "texto": "Que era un volcán marino",
+          "correcta": false
+        },
+        {
+          "texto": "Que era un submarino pirata",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Qué dejaba la criatura tras de sí?",
+      "respuestas": [
+        {
+          "texto": "Humo negro",
+          "correcta": false
+        },
+        {
+          "texto": "Aceite oscuro",
+          "correcta": false
+        },
+        {
+          "texto": "Espuma fosforescente",
+          "correcta": true
+        },
+        {
+          "texto": "Restos de madera",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Qué barco sufrió daños importantes?",
+      "respuestas": [
+        {
+          "texto": "Abraham Lincoln",
+          "correcta": false
+        },
+        {
+          "texto": "Victoria",
+          "correcta": false
+        },
+        {
+          "texto": "Scotia",
+          "correcta": true
+        },
+        {
+          "texto": "Nautilus",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Cómo era la abertura encontrada en el casco?",
+      "respuestas": [
+        {
+          "texto": "Circular",
+          "correcta": false
+        },
+        {
+          "texto": "Irregular",
+          "correcta": false
+        },
+        {
+          "texto": "Cuadrada",
+          "correcta": false
+        },
+        {
+          "texto": "Triangular",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "texto": "¿Dónde trabajaba el narrador?",
+      "respuestas": [
+        {
+          "texto": "Universidad de Londres",
+          "correcta": false
+        },
+        {
+          "texto": "Museo de Historia Natural de París",
+          "correcta": true
+        },
+        {
+          "texto": "Biblioteca Nacional",
+          "correcta": false
+        },
+        {
+          "texto": "Observatorio de Nueva York",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Qué teoría defendían muchos especialistas?",
+      "respuestas": [
+        {
+          "texto": "Que era un tiburón gigante",
+          "correcta": false
+        },
+        {
+          "texto": "Que era un narval gigante",
+          "correcta": true
+        },
+        {
+          "texto": "Que era un submarino militar",
+          "correcta": false
+        },
+        {
+          "texto": "Que era una ballena azul",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Qué decidió hacer el gobierno de Estados Unidos?",
+      "respuestas": [
+        {
+          "texto": "Ignorar el problema",
+          "correcta": false
+        },
+        {
+          "texto": "Cerrar rutas marítimas",
+          "correcta": false
+        },
+        {
+          "texto": "Organizar una expedición",
+          "correcta": true
+        },
+        {
+          "texto": "Construir otro puerto",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Cómo se llamaba la fragata?",
+      "respuestas": [
+        {
+          "texto": "Nautilus",
+          "correcta": false
+        },
+        {
+          "texto": "Scotia",
+          "correcta": false
+        },
+        {
+          "texto": "Victoria",
+          "correcta": false
+        },
+        {
+          "texto": "Abraham Lincoln",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "texto": "¿Por qué fue invitado el narrador?",
+      "respuestas": [
+        {
+          "texto": "Por ser capitán",
+          "correcta": false
+        },
+        {
+          "texto": "Por sus conocimientos científicos",
+          "correcta": true
+        },
+        {
+          "texto": "Por su experiencia militar",
+          "correcta": false
+        },
+        {
+          "texto": "Por ser periodista",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Cómo se llamaba el ayudante del narrador?",
+      "respuestas": [
+        {
+          "texto": "Ned",
+          "correcta": false
+        },
+        {
+          "texto": "Pierre",
+          "correcta": false
+        },
+        {
+          "texto": "Conseil",
+          "correcta": true
+        },
+        {
+          "texto": "Robert",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Cómo era Conseil?",
+      "respuestas": [
+        {
+          "texto": "Impulsivo y agresivo",
+          "correcta": false
+        },
+        {
+          "texto": "Tranquilo y ordenado",
+          "correcta": true
+        },
+        {
+          "texto": "Silencioso y desconfiado",
+          "correcta": false
+        },
+        {
+          "texto": "Nervioso y tímido",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Quién era Ned Land?",
+      "respuestas": [
+        {
+          "texto": "Un científico francés",
+          "correcta": false
+        },
+        {
+          "texto": "Un capitán inglés",
+          "correcta": false
+        },
+        {
+          "texto": "Un arponero canadiense",
+          "correcta": true
+        },
+        {
+          "texto": "Un comerciante americano",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Por qué era conocido Ned Land?",
+      "respuestas": [
+        {
+          "texto": "Por construir barcos",
+          "correcta": false
+        },
+        {
+          "texto": "Por estudiar océanos",
+          "correcta": false
+        },
+        {
+          "texto": "Por su habilidad cazando ballenas",
+          "correcta": true
+        },
+        {
+          "texto": "Por dirigir expediciones",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Qué hacía la tripulación constantemente?",
+      "respuestas": [
+        {
+          "texto": "Reparar motores",
+          "correcta": false
+        },
+        {
+          "texto": "Observar el horizonte",
+          "correcta": true
+        },
+        {
+          "texto": "Limpiar la cubierta",
+          "correcta": false
+        },
+        {
+          "texto": "Revisar mapas",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Cómo permanecía el océano durante varios días?",
+      "respuestas": [
+        {
+          "texto": "Violento y oscuro",
+          "correcta": false
+        },
+        {
+          "texto": "Cubierto de hielo",
+          "correcta": false
+        },
+        {
+          "texto": "Tranquilo y vacío",
+          "correcta": true
+        },
+        {
+          "texto": "Lleno de tormentas",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Quién lanzó un grito desde el mástil principal?",
+      "respuestas": [
+        {
+          "texto": "El narrador",
+          "correcta": false
+        },
+        {
+          "texto": "Conseil",
+          "correcta": false
+        },
+        {
+          "texto": "Ned Land",
+          "correcta": false
+        },
+        {
+          "texto": "Uno de los marineros",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "texto": "¿Qué apareció a lo lejos?",
+      "respuestas": [
+        {
+          "texto": "Una tormenta",
+          "correcta": false
+        },
+        {
+          "texto": "Una isla volcánica",
+          "correcta": false
+        },
+        {
+          "texto": "Una intensa luz blanquecina",
+          "correcta": true
+        },
+        {
+          "texto": "Un barco hundido",
+          "correcta": false
+        }
+      ]
+    }
+  ]
+}

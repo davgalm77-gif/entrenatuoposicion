@@ -1,0 +1,425 @@
+﻿{
+  "imagen": "imagen.png",
+  "preguntas": [
+    {
+      "texto": "¿Cuántos árboles hay en la imagen?",
+      "respuestas": [
+        {
+          "texto": "24",
+          "correcta": false
+        },
+        {
+          "texto": "25",
+          "correcta": true
+        },
+        {
+          "texto": "26",
+          "correcta": false
+        },
+        {
+          "texto": "27",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "Por la Avenida de las Autonomías circula:",
+      "respuestas": [
+        {
+          "texto": "Un coche",
+          "correcta": false
+        },
+        {
+          "texto": "Una moto",
+          "correcta": false
+        },
+        {
+          "texto": "Un autobús",
+          "correcta": false
+        },
+        {
+          "texto": "Un coche y una moto",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "texto": "El Hospital se encuentra a la derecha del:",
+      "respuestas": [
+        {
+          "texto": "Centro Comercial",
+          "correcta": false
+        },
+        {
+          "texto": "Parque de Bomberos",
+          "correcta": false
+        },
+        {
+          "texto": "Centro Deportivo",
+          "correcta": false
+        },
+        {
+          "texto": "Instituto",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "texto": "El número total de personas en la imagen es:",
+      "respuestas": [
+        {
+          "texto": "12",
+          "correcta": false
+        },
+        {
+          "texto": "13",
+          "correcta": false
+        },
+        {
+          "texto": "14",
+          "correcta": false
+        },
+        {
+          "texto": "15",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "texto": "Por la Calle de los Limoneros circula:",
+      "respuestas": [
+        {
+          "texto": "Un coche",
+          "correcta": true
+        },
+        {
+          "texto": "Uns moto",
+          "correcta": false
+        },
+        {
+          "texto": "un autobús",
+          "correcta": false
+        },
+        {
+          "texto": "Ninguno de los anteriores",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Cuántos coches hay aparcados en el Centro Comercial?",
+      "respuestas": [
+        {
+          "texto": "1",
+          "correcta": false
+        },
+        {
+          "texto": "2",
+          "correcta": false
+        },
+        {
+          "texto": "3",
+          "correcta": true
+        },
+        {
+          "texto": "4",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "El Parque de Bomberos está situado en la calle:",
+      "respuestas": [
+        {
+          "texto": "Calle de los Limoneros",
+          "correcta": false
+        },
+        {
+          "texto": "Calle Vergel",
+          "correcta": false
+        },
+        {
+          "texto": "Calle Galán Tenor",
+          "correcta": true
+        },
+        {
+          "texto": "Tristán y Acuña",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "El número de pinos que hay en la imagen es:",
+      "respuestas": [
+        {
+          "texto": "12",
+          "correcta": false
+        },
+        {
+          "texto": "13",
+          "correcta": true
+        },
+        {
+          "texto": "14",
+          "correcta": false
+        },
+        {
+          "texto": "15",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "La chica que aparece en la Calle Don Juan de Pastor está:",
+      "respuestas": [
+        {
+          "texto": "Con su pareja",
+          "correcta": false
+        },
+        {
+          "texto": "Va sola",
+          "correcta": false
+        },
+        {
+          "texto": "Paseando al perro",
+          "correcta": true
+        },
+        {
+          "texto": "No hay ninguna chica",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Cuántos coches descapotables podemos ver en la imagen?",
+      "respuestas": [
+        {
+          "texto": "1",
+          "correcta": false
+        },
+        {
+          "texto": "2",
+          "correcta": false
+        },
+        {
+          "texto": "3",
+          "correcta": false
+        },
+        {
+          "texto": "Ninguno",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "texto": "¿Cuántos hombres hay en la iamgen?",
+      "respuestas": [
+        {
+          "texto": "10",
+          "correcta": true
+        },
+        {
+          "texto": "11",
+          "correcta": false
+        },
+        {
+          "texto": "12",
+          "correcta": false
+        },
+        {
+          "texto": "13",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "El número total de árboles sin ser pinos son:",
+      "respuestas": [
+        {
+          "texto": "10",
+          "correcta": false
+        },
+        {
+          "texto": "11",
+          "correcta": false
+        },
+        {
+          "texto": "12",
+          "correcta": true
+        },
+        {
+          "texto": "13",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿De cuántas ventanas consta el instituto?",
+      "respuestas": [
+        {
+          "texto": "6",
+          "correcta": false
+        },
+        {
+          "texto": "7",
+          "correcta": false
+        },
+        {
+          "texto": "8",
+          "correcta": false
+        },
+        {
+          "texto": "9",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "texto": "¿Cuántos camiones de bomberos hay aparcados en el parque?",
+      "respuestas": [
+        {
+          "texto": "1",
+          "correcta": false
+        },
+        {
+          "texto": "2",
+          "correcta": false
+        },
+        {
+          "texto": "3",
+          "correcta": true
+        },
+        {
+          "texto": "4",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "La Avenida de las Autonomías es una avenida de circulación hacia:",
+      "respuestas": [
+        {
+          "texto": "La izquierda",
+          "correcta": false
+        },
+        {
+          "texto": "La derecha",
+          "correcta": false
+        },
+        {
+          "texto": "La izquierda y la derecha",
+          "correcta": true
+        },
+        {
+          "texto": "El norte y el sur",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "La Calle Mies del Rosal, es una calle:",
+      "respuestas": [
+        {
+          "texto": "Perpendicular a la Calle de los Limoneros",
+          "correcta": false
+        },
+        {
+          "texto": "Perpendicular a la Calle Don Juan de Pastor",
+          "correcta": false
+        },
+        {
+          "texto": "Perpendicular a la Calle Galán Tenor",
+          "correcta": false
+        },
+        {
+          "texto": "Perpendicular a la Avenida de las Autonomías",
+          "correcta": true
+        }
+      ]
+    },
+    {
+      "texto": "¿En cuál de los medios de transporte podemos ver a sus ocupantes?",
+      "respuestas": [
+        {
+          "texto": "En el coche del Centro Comercial",
+          "correcta": false
+        },
+        {
+          "texto": "En la moto de la Avenida de las Autonomías",
+          "correcta": true
+        },
+        {
+          "texto": "En el camión de bomberos",
+          "correcta": false
+        },
+        {
+          "texto": "En el autobús",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "El Centro Comercial se encuentra situado:",
+      "respuestas": [
+        {
+          "texto": "Noreste",
+          "correcta": false
+        },
+        {
+          "texto": "Suroeste",
+          "correcta": true
+        },
+        {
+          "texto": "Sureste",
+          "correcta": false
+        },
+        {
+          "texto": "Este",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "¿Cuántos pasos de cebra hay?",
+      "respuestas": [
+        {
+          "texto": "6",
+          "correcta": false
+        },
+        {
+          "texto": "7",
+          "correcta": false
+        },
+        {
+          "texto": "8",
+          "correcta": true
+        },
+        {
+          "texto": "9",
+          "correcta": false
+        }
+      ]
+    },
+    {
+      "texto": "El autobús se dirige hacia:",
+      "respuestas": [
+        {
+          "texto": "El colegio",
+          "correcta": false
+        },
+        {
+          "texto": "El Hospital",
+          "correcta": false
+        },
+        {
+          "texto": "El Parque de Bomberos",
+          "correcta": false
+        },
+        {
+          "texto": "Ninguno de los anteriores",
+          "correcta": true
+        }
+      ]
+    }
+  ]
+}

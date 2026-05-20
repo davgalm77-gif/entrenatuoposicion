@@ -1,0 +1,12 @@
+﻿{
+  "texto": "En esta serie existe una relación objetiva entre sus componentes.",
+  "pregunta": "Debe detectar cuál es dicha relación y elegir aquella figura que no concuerde dentro de ese razonamiento.",
+  "opciones": [
+    "A.png",
+    "B.png",
+    "C.png",
+    "D.png"
+  ],
+  "correcta": "C",
+  "explicacion": "Se sigue en todas el orden alfabético menos en las casillas de esta opción, es decir, el orden de la opción c) debería ser: R, S, T, U y no R, S, T, V."
+}

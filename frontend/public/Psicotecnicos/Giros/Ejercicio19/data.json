@@ -1,0 +1,11 @@
+﻿{
+  "texto": "¿Qué opción es la imagen espejo de la siguente figura?",
+  "pregunta": "pregunta.png",
+  "opciones": [
+    "A.png",
+    "B.png",
+    "C.png",
+    "D.png"
+  ],
+  "correcta": "C"
+}

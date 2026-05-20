@@ -1,0 +1,12 @@
+﻿{
+  "texto": "Escoje de entre las opciones de respuesta la figura que sigue el razonamiento lógico de analogía entre los dos pares de figuras",
+  "pregunta": "pregunta.png",
+  "opciones": [
+    "A.png",
+    "B.png",
+    "C.png",
+    "D.png"
+  ],
+  "correcta": "B",
+  "explicacion": "Si la elipse grande gris pasa a negra, en el segundo par el cuadrado grande gris debe pasar a negro, si las dos elipses de los extremos pasan de blancas a grises los rombos blancos pasarán a gris, el dibujo central pasa de negro a blanco."
+}

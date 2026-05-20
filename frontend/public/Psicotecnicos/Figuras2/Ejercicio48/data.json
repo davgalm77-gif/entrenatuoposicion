@@ -1,0 +1,12 @@
+﻿{
+  "texto": "En esta serie existe una relación objetiva entre sus componentes.",
+  "pregunta": "Debe detectar cuál es dicha relación y elegir aquella figura que no concuerde dentro de ese razonamiento.",
+  "opciones": [
+    "A.png",
+    "B.png",
+    "C.png",
+    "D.png"
+  ],
+  "correcta": "D",
+  "explicacion": "Los círculos de esta figura están en diagonal y no como el resto de figuras."
+}

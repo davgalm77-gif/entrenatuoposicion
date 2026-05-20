@@ -1,0 +1,11 @@
+﻿{
+  "texto": "¿Que cubo se forma al plegar la siguiente figura?",
+  "pregunta": "pregunta.png",
+  "opciones": [
+    "A.png",
+    "B.png",
+    "C.png",
+    "D.png"
+  ],
+  "correcta": "B"
+}

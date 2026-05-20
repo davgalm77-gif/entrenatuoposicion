@@ -1,0 +1,12 @@
+﻿{
+  "texto": "Escoje de entre las opciones de respuesta la figura que sigue el razonamiento lógico de la serie",
+  "pregunta": "pregunta.png",
+  "opciones": [
+    "A.png",
+    "B.png",
+    "C.png",
+    "D.png"
+  ],
+  "correcta": "C",
+  "explicacion": "Cada una de las figuras de la serie está formadas por tres líneas que siempre forman dos ángulos agudos y dos de ellas ni se cortan ni se tocan."
+}

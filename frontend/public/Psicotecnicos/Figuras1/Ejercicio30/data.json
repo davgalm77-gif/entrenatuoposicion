@@ -1,0 +1,12 @@
+﻿{
+  "texto": "Escoje de entre las opciones de respuesta la figura que sigue el razonamiento lógico de analogía entre los dos pares de figuras",
+  "pregunta": "pregunta.png",
+  "opciones": [
+    "A.png",
+    "B.png",
+    "C.png",
+    "D.png"
+  ],
+  "correcta": "A",
+  "explicacion": "En cada par de figuras tenemos dos dibujos (estrella y cuadrado y hexágono y triángulo), ambos cambian de blanco a negro y viceversa y el que es continente pasa a contenido y viceversa."
+}

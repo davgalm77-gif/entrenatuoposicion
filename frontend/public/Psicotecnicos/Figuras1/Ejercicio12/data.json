@@ -1,0 +1,12 @@
+﻿{
+  "texto": "En la siguiente serie de figuras elije de entre las opciones de respuesta la figura que debe ocupar el último lugar según el razonamiento lógico de la serie",
+  "pregunta": "pregunta.png",
+  "opciones": [
+    "A.png",
+    "B.png",
+    "C.png",
+    "D.png"
+  ],
+  "correcta": "B",
+  "explicacion": "Se añade cada vez una línea corta y una larga y al mismo tiempo la figura gira cada vez 90º en sentido contrario a las agujas del reloj."
+}

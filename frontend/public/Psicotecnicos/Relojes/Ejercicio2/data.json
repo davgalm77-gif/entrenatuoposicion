@@ -1,0 +1,12 @@
+﻿{
+  "texto": "Indica la opción que completa correctamente la secuencia de relojes.",
+  "pregunta": "pregunta.png",
+  "opciones": [
+    "16:30:40",
+    "14:20:40",
+    "12:30:40",
+    "22:20:20"
+  ],
+  "correcta": "A",
+  "explicacion": "horas: x2; minutos: +20; segundos: -30"
+}

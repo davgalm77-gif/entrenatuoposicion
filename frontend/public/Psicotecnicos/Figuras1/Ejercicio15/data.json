@@ -1,0 +1,12 @@
+﻿{
+  "texto": "En la siguiente serie de figuras elije de entre las opciones de respuesta la figura que debe ocupar la posición central según el razonamiento lógico de la serie",
+  "pregunta": "pregunta.png",
+  "opciones": [
+    "A.png",
+    "B.png",
+    "C.png",
+    "D.png"
+  ],
+  "correcta": "D",
+  "explicacion": "El área negra exterior se contrae haciéndose cada vez más pequeña hacia el centro y el área negra pequeña central hace exactamente lo contrario (se expande hacia el exterior) coincidiendo ambas en la figura central de la serie."
+}

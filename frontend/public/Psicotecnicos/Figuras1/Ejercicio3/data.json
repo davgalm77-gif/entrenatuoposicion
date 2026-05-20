@@ -1,0 +1,12 @@
+﻿{
+  "texto": "En la siguiente serie de figuras elije de entre las opciones de respuesta la figura que sigue el razonamiento lógico de la serie",
+  "pregunta": "pregunta.png",
+  "opciones": [
+    "A.png",
+    "B.png",
+    "C.png",
+    "D.png"
+  ],
+  "correcta": "B",
+  "explicacion": "Las figuras de la tercera columna se forman superponiendo las de la primera y segunda columnas."
+}

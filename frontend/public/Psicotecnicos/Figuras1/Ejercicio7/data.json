@@ -1,0 +1,12 @@
+﻿{
+  "texto": "En la siguiente serie de figuras elije de entre las opciones de respuesta la figura que debe ocupar el último lugar según el razonamiento lógico de la serie",
+  "pregunta": "pregunta.png",
+  "opciones": [
+    "A.png",
+    "B.png",
+    "C.png",
+    "D.png"
+  ],
+  "correcta": "B",
+  "explicacion": "La figura gira cada vez 90º en sentido de las agujas del reloj, tanto la elipse como el círculo cambian cada vez de blanco a negro o viceversa y el círculo se hace tangente exterior o tangente interior con la elipse en el mismo punto."
+}
