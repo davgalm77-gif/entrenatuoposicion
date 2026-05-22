@@ -88,17 +88,21 @@ function PsicotecnicosPage() {
           </Link>
 
           {/* NUMERICOS */}
-          <PsicoCard
-            titulo="Numéricos"
-            descripcion="Operaciones, porcentajes, series numéricas y razonamiento matemático."
-            color="bg-violet-500/20"
-            icono={
-              <Sigma
-                size={28}
-                className="text-violet-400"
-              />
-            }
-          />
+<Link to="/numerico-test">
+
+  <PsicoCard
+    titulo="Numéricos"
+    descripcion="Operaciones, porcentajes, series numéricas y razonamiento matemático."
+    color="bg-violet-500/20"
+    icono={
+      <Sigma
+        size={28}
+        className="text-violet-400"
+      />
+    }
+  />
+
+</Link>
 
           {/* FIGURAS */}
           <Link to="/figuras-test">

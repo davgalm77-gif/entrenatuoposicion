@@ -29,6 +29,9 @@ public class Temario
     public List<Tema> Temas { get; set; }
     = [];
 
+    public List<Resumen> Resumenes { get; set; }
+= [];
+
     public string TextoExtraido { get; set; }
     = string.Empty;
 }

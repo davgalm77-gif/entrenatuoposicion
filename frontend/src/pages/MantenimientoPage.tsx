@@ -10,9 +10,6 @@ function MantenimientoPage() {
   const [openModal, setOpenModal] =
     useState(false)
 
-  const [email, setEmail] =
-    useState("")
-
   const [mensaje, setMensaje] =
     useState("")
 
@@ -243,24 +240,6 @@ function MantenimientoPage() {
 
               </div>
 
-              <input
-                value={email}
-                onChange={(e) =>
-                  setEmail(e.target.value)
-                }
-                type="email"
-                placeholder="Tu correo electrónico"
-                className="
-                  w-full
-                  bg-slate-800
-                  border border-slate-700
-                  rounded-2xl
-                  px-4 py-3
-                  mb-4
-                  outline-none
-                "
-              />
-
               <textarea
                 value={mensaje}
                 onChange={(e) =>
@@ -282,18 +261,6 @@ function MantenimientoPage() {
               <button
                 onClick={async () => {
 
-                  if (
-  !/^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    .test(email)
-) {
-
-  alert(
-    "Introduce un correo válido"
-  )
-
-  return
-}
-
                   await fetch(
                     `${import.meta.env.VITE_API_URL}/api/Sugerencias`,
                     {
@@ -304,7 +271,6 @@ function MantenimientoPage() {
                       },
 
                       body: JSON.stringify({
-                        email,
                         mensaje
                       })
                     }
@@ -314,14 +280,11 @@ function MantenimientoPage() {
 
                   setEnviado(true)
 
-                  setEmail("")
-
                   setMensaje("")
 
                 }}
 
                 disabled={
-                  !email.trim() ||
                   !mensaje.trim()
                 }
 
@@ -339,7 +302,7 @@ function MantenimientoPage() {
                   text-slate-950
                 "
               >
-                Enviar TEST
+                Enviar
               </button>
 
             </div>

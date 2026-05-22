@@ -1,5 +1,8 @@
-import { Link } from "react-router-dom"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+
+import {
+  useNavigate
+} from "react-router-dom"
 
 import DashboardLayout from "../../layouts/DashboardLayout"
 
@@ -7,128 +10,209 @@ import {
   Brain,
   Trophy,
   CheckCircle2,
-  XCircle,
-  ArrowLeft,
+  XCircle
 } from "lucide-react"
-
-type Respuesta = {
-  texto: string
-  correcta: boolean
-}
 
 type Pregunta = {
   pregunta: string
-  respuestas: Respuesta[]
+
+  opciones: string[]
+
+  correcta: string
+
+  explicacion?: string
 }
 
-const preguntas: Pregunta[] = [
-  {
-    pregunta:
-      "¿Qué palabra completa correctamente la analogía?\n\nLibro es a leer como cuchillo es a...",
-    respuestas: [
-      {
-        texto: "Cortar",
-        correcta: true,
-      },
-      {
-        texto: "Cocinar",
-        correcta: false,
-      },
-      {
-        texto: "Guardar",
-        correcta: false,
-      },
-      {
-        texto: "Pintar",
-        correcta: false,
-      },
-    ],
-  },
+type ResultadoPregunta = {
+  pregunta: Pregunta
 
-  {
-    pregunta:
-      "Selecciona la palabra que NO pertenece al grupo.",
-    respuestas: [
-      {
-        texto: "Perro",
-        correcta: false,
-      },
-      {
-        texto: "Gato",
-        correcta: false,
-      },
-      {
-        texto: "Caballo",
-        correcta: false,
-      },
-      {
-        texto: "Martillo",
-        correcta: true,
-      },
-    ],
-  },
+  respuestaUsuario: string
 
-  {
-    pregunta:
-      "¿Qué palabra tiene un significado más parecido a “efímero”?",
-    respuestas: [
-      {
-        texto: "Duradero",
-        correcta: false,
-      },
-      {
-        texto: "Temporal",
-        correcta: true,
-      },
-      {
-        texto: "Pesado",
-        correcta: false,
-      },
-      {
-        texto: "Constante",
-        correcta: false,
-      },
-    ],
-  },
-]
+  acertada: boolean
+}
 
 function VerbalTestPage() {
 
-  const [index, setIndex] = useState(0)
+  const navigate =
+    useNavigate()
 
-  const [aciertos, setAciertos] = useState(0)
+  const [
+    preguntas,
+    setPreguntas
+  ] = useState<Pregunta[]>([])
 
-  const [finalizado, setFinalizado] = useState(false)
+  const [
+    resultados,
+    setResultados
+  ] = useState<
+    ResultadoPregunta[]
+  >([])
 
-  const preguntaActual = preguntas[index]
+  const [
+    index,
+    setIndex
+  ] = useState(0)
 
-  function responder(correcta: boolean) {
+  const [
+    cargando,
+    setCargando
+  ] = useState(true)
 
-    if (finalizado)
-      return
+  const [
+    finalizado,
+    setFinalizado
+  ] = useState(false)
 
-    if (correcta) {
+  useEffect(() => {
 
-      setAciertos((a) => a + 1)
+    async function cargar() {
+
+      try {
+
+        const response =
+          await fetch(
+            `${import.meta.env.VITE_API_URL}/api/Psicotecnicos/verbal`,
+            {
+              method: "POST"
+            }
+          )
+
+        const data =
+          await response.json()
+
+        alert(
+`Prueba generada
+
+Prompt tokens: ${data.promptTokens}
+
+Completion tokens: ${data.completionTokens}
+
+Total tokens: ${data.totalTokens}`
+)
+
+setPreguntas(
+  data.preguntas
+)
+
+      }
+      catch (error) {
+
+        console.error(
+          error
+        )
+
+      }
+      finally {
+
+        setCargando(
+          false
+        )
+
+      }
 
     }
 
-    const siguiente = index + 1
+    cargar()
 
-    if (siguiente >= preguntas.length) {
+  }, [])
 
-      setFinalizado(true)
+  function responder(
+    letra: string
+  ) {
 
-      return
+    const actual =
+      preguntas[index]
+
+    const acertada =
+      letra === actual.correcta
+
+    const nuevoResultado:
+      ResultadoPregunta = {
+
+      pregunta: actual,
+
+      respuestaUsuario:
+        letra,
+
+      acertada
     }
 
-    setIndex(siguiente)
+    setResultados(
+      [
+        ...resultados,
+        nuevoResultado
+      ]
+    )
+
+    const siguiente =
+      index + 1
+
+    if (
+      siguiente >=
+      preguntas.length
+    ) {
+
+      setFinalizado(
+        true
+      )
+
+      return
+
+    }
+
+    setIndex(
+      siguiente
+    )
 
   }
 
-  const porcentaje = Math.round(
-    (aciertos / preguntas.length) * 100
-  )
+  if (cargando) {
+
+    return (
+
+      <DashboardLayout>
+
+        <div className="h-[60vh] flex items-center justify-center">
+
+          <div className="text-center">
+
+            <h1 className="text-2xl font-black text-white">
+
+              Generando prueba...
+
+            </h1>
+
+            <p className="text-slate-400 text-sm mt-2">
+
+              Preparando preguntas verbales
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </DashboardLayout>
+
+    )
+
+  }
+
+  if (
+    preguntas.length === 0
+  ) {
+
+    return null
+
+  }
+
+  const preguntaActual =
+    preguntas[index]
+
+  const aciertos =
+    resultados.filter(
+      r => r.acertada
+    ).length
 
   return (
 
@@ -136,36 +220,39 @@ function VerbalTestPage() {
 
       <div className="max-w-5xl mx-auto">
 
+        {/* TEST */}
         {!finalizado && (
 
-          <div className="grid grid-cols-1 xl:grid-cols-[1fr_280px] gap-6">
+          <div className="grid grid-cols-1 xl:grid-cols-4 gap-4">
 
             {/* IZQUIERDA */}
-            <div className="bg-slate-900 border border-slate-800 rounded-[2rem] overflow-hidden">
+            <div className="xl:col-span-3 bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
 
-              {/* TOP */}
-              <div className="border-b border-slate-800 p-6">
+              {/* HEADER */}
+              <div className="border-b border-slate-800 p-5 flex items-center justify-between flex-wrap gap-3">
 
-                <div className="flex items-center gap-4">
+                <div>
 
-                  <Brain
-                    size={32}
-                    className="text-cyan-400"
-                  />
+                  <div className="flex items-center gap-3">
 
-                  <div>
+                    <Brain
+                      size={30}
+                      className="text-cyan-400"
+                    />
 
-                    <h1 className="text-3xl font-black">
+                    <h1 className="text-3xl font-black text-white">
+
                       Verbal
+
                     </h1>
 
-                    <p className="text-slate-400 mt-1">
-
-                      Pregunta {index + 1} de {preguntas.length}
-
-                    </p>
-
                   </div>
+
+                  <p className="text-slate-400 text-sm mt-2">
+
+                    Pregunta {index + 1} de {preguntas.length}
+
+                  </p>
 
                 </div>
 
@@ -175,7 +262,7 @@ function VerbalTestPage() {
               <div className="p-8">
 
                 {/* PREGUNTA */}
-                <h2 className="text-2xl font-bold leading-relaxed whitespace-pre-line">
+                <h2 className="text-2xl font-bold leading-relaxed whitespace-pre-line text-white">
 
                   {preguntaActual.pregunta}
 
@@ -184,33 +271,46 @@ function VerbalTestPage() {
                 {/* RESPUESTAS */}
                 <div className="mt-8 space-y-4">
 
-                  {preguntaActual.respuestas.map((r, i) => (
+                  {preguntaActual.opciones.map((o, i) => {
 
-                    <button
-                      key={i}
-                      onClick={() => responder(r.correcta)}
-                      className="w-full text-left p-4 rounded-3xl bg-slate-950 border border-slate-800 hover:border-cyan-400 hover:bg-slate-900 transition"
-                    >
+                    const letra =
+                      String.fromCharCode(
+                        65 + i
+                      )
 
-                      <div className="flex items-start gap-4">
+                    return (
 
-                        <div className="w-10 h-10 rounded-2xl bg-cyan-500 text-black font-black text-lg flex items-center justify-center shrink-0">
+                      <button
+                        key={i}
+                        onClick={() =>
+                          responder(
+                            letra
+                          )
+                        }
+                        className="w-full text-left p-4 rounded-3xl bg-slate-950 border border-slate-800 hover:border-cyan-400 hover:bg-slate-900 transition"
+                      >
 
-                          {String.fromCharCode(65 + i)}
+                        <div className="flex items-start gap-4">
+
+                          <div className="w-10 h-10 rounded-2xl bg-cyan-500 text-black font-black text-lg flex items-center justify-center shrink-0">
+
+                            {letra}
+
+                          </div>
+
+                          <p className="text-lg leading-relaxed text-white">
+
+                            {o}
+
+                          </p>
 
                         </div>
 
-                        <p className="text-lg leading-relaxed">
+                      </button>
 
-                          {r.texto}
+                    )
 
-                        </p>
-
-                      </div>
-
-                    </button>
-
-                  ))}
+                  })}
 
                 </div>
 
@@ -219,10 +319,9 @@ function VerbalTestPage() {
             </div>
 
             {/* DERECHA */}
-            <div className="space-y-6">
+            <div className="space-y-4">
 
-              {/* PROGRESO */}
-              <div className="bg-slate-900 border border-slate-800 rounded-[2rem] p-6">
+              <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
 
                 <div className="flex items-center gap-3 mb-6">
 
@@ -231,8 +330,10 @@ function VerbalTestPage() {
                     className="text-yellow-400"
                   />
 
-                  <h2 className="text-2xl font-bold">
+                  <h2 className="text-2xl font-bold text-white">
+
                     Progreso
+
                   </h2>
 
                 </div>
@@ -241,7 +342,7 @@ function VerbalTestPage() {
 
                   <div>
 
-                    <p className="text-slate-500 text-sm uppercase tracking-widest mb-2">
+                    <p className="text-slate-500 text-xs uppercase tracking-widest mb-2">
 
                       Pregunta actual
 
@@ -257,7 +358,7 @@ function VerbalTestPage() {
 
                   <div>
 
-                    <p className="text-slate-500 text-sm uppercase tracking-widest mb-2">
+                    <p className="text-slate-500 text-xs uppercase tracking-widest mb-2">
 
                       Aciertos
 
@@ -281,112 +382,187 @@ function VerbalTestPage() {
 
         )}
 
-        {/* RESULTADO */}
+        {/* RESULTADOS */}
         {finalizado && (
 
-          <div className="max-w-4xl mx-auto bg-slate-900 border border-slate-800 rounded-[2rem] overflow-hidden">
+          <div className="space-y-4">
 
-            {/* TOP */}
-            <div className="p-8 border-b border-slate-800 text-center">
+            {/* HEADER */}
+            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
 
-              <div className="w-24 h-24 rounded-full bg-cyan-500 mx-auto flex items-center justify-center">
+              <h1 className="text-2xl font-black text-white">
 
-                <Trophy
-                  size={42}
-                  className="text-black"
-                />
-
-              </div>
-
-              <h1 className="text-5xl font-black mt-6">
-
-                {porcentaje}%
+                Test finalizado
 
               </h1>
 
-              <p className="text-slate-400 text-xl mt-3">
+              <p className="text-slate-400 mt-2 text-sm">
 
-                Prueba finalizada
+                Has acertado{" "}
+
+                <span className="text-emerald-400 font-black">
+
+                  {aciertos}
+
+                </span>
+
+                {" "}de{" "}
+
+                <span className="text-cyan-400 font-black">
+
+                  {resultados.length}
+
+                </span>
+
+                {" "}preguntas
 
               </p>
 
             </div>
 
-            {/* STATS */}
-            <div className="p-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* PREGUNTAS */}
+            {resultados.map((r, i) => (
 
-              <div className="bg-slate-950 border border-slate-800 rounded-3xl p-6 text-center">
+              <div
+                key={i}
+                className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden"
+              >
 
-                <CheckCircle2
-                  size={38}
-                  className="text-emerald-400 mx-auto"
-                />
+                {/* TOP */}
+                <div className="p-4 border-b border-slate-800">
 
-                <h2 className="text-4xl font-black mt-4 text-emerald-400">
+                  <p className="text-slate-500 text-[10px] uppercase tracking-widest mb-1">
 
-                  {aciertos}
+                    Pregunta {i + 1}
 
-                </h2>
+                  </p>
 
-                <p className="text-slate-400 text-lg mt-2">
+                  <h2 className="text-base font-black text-white leading-relaxed whitespace-pre-line">
 
-                  Aciertos
+                    {r.pregunta.pregunta}
 
-                </p>
+                  </h2>
+
+                </div>
+
+                {/* RESPUESTAS */}
+                <div className="p-4 space-y-2">
+
+                  {r.pregunta.opciones.map((o, j) => {
+
+                    const letra =
+                      String.fromCharCode(
+                        65 + j
+                      )
+
+                    const esCorrecta =
+                      letra === r.pregunta.correcta
+
+                    const esUsuario =
+                      letra === r.respuestaUsuario
+
+                    return (
+
+                      <div
+                        key={j}
+                        className={`rounded-xl border p-3 flex items-center gap-3 ${
+                          esCorrecta
+                            ? "bg-emerald-500/10 border-emerald-500/20"
+                            : esUsuario
+                              ? "bg-red-500/10 border-red-500/20"
+                              : "bg-slate-950 border-slate-800"
+                        }`}
+                      >
+
+                        {/* LETRA */}
+                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm font-black shrink-0 ${
+                          esCorrecta
+                            ? "bg-emerald-400 text-black"
+                            : esUsuario
+                              ? "bg-red-400 text-black"
+                              : "bg-slate-700 text-white"
+                        }`}>
+
+                          {letra}
+
+                        </div>
+
+                        {/* TEXTO */}
+                        <p className="text-sm font-medium text-white">
+
+                          {o}
+
+                        </p>
+
+                        {/* TAGS */}
+                        <div className="ml-auto flex gap-2 flex-wrap">
+
+                          {esCorrecta && (
+
+                            <div className="px-2 py-1 rounded-lg bg-emerald-400 text-black text-xs font-black">
+
+                              Correcta
+
+                            </div>
+
+                          )}
+
+                          {esUsuario && !esCorrecta && (
+
+                            <div className="px-2 py-1 rounded-lg bg-red-400 text-black text-xs font-black">
+
+                              Tu respuesta
+
+                            </div>
+
+                          )}
+
+                        </div>
+
+                      </div>
+
+                    )
+
+                  })}
+
+                </div>
+
+                {/* EXPLICACION */}
+                {r.pregunta.explicacion && (
+
+                  <div className="px-4 pb-4">
+
+                    <div className="bg-slate-950 border border-slate-800 rounded-2xl p-4">
+
+                      <p className="text-sm text-slate-300 leading-relaxed">
+
+                        {r.pregunta.explicacion}
+
+                      </p>
+
+                    </div>
+
+                  </div>
+
+                )}
 
               </div>
 
-              <div className="bg-slate-950 border border-slate-800 rounded-3xl p-6 text-center">
+            ))}
 
-                <XCircle
-                  size={38}
-                  className="text-red-400 mx-auto"
-                />
-
-                <h2 className="text-4xl font-black mt-4 text-red-400">
-
-                  {preguntas.length - aciertos}
-
-                </h2>
-
-                <p className="text-slate-400 text-lg mt-2">
-
-                  Fallos
-
-                </p>
-
-              </div>
-
-            </div>
-
-            {/* BOTONES */}
-            <div className="p-8 border-t border-slate-800 flex flex-col md:flex-row gap-4">
+            {/* BOTON */}
+            <div className="flex justify-center pt-6">
 
               <button
-                onClick={() => {
-
-                  setIndex(0)
-                  setAciertos(0)
-                  setFinalizado(false)
-
-                }}
-                className="flex-1 h-14 rounded-3xl bg-blue-600 hover:bg-blue-500 transition text-white text-lg font-black"
+                onClick={() =>
+             navigate(-1)
+}
+                className="flex-1 h-14 rounded-2xl bg-slate-950 border border-slate-800 hover:bg-slate-800 transition text-lg font-bold flex items-center justify-center text-white"
               >
-
-                Generar nueva prueba
-
-              </button>
-
-              <Link
-                to="/psicotecnicos"
-                className="flex-1 h-14 rounded-3xl bg-slate-950 border border-slate-800 hover:bg-slate-800 transition text-lg font-bold flex items-center justify-center gap-3 text-white"
-              >
-
-                <ArrowLeft size={20} />
 
                 Volver
 
-              </Link>
+              </button>
 
             </div>
 

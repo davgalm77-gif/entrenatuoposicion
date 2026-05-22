@@ -20,9 +20,9 @@ function TemasPage() {
   const { id } = useParams()
 
   const [
-    temasSeleccionados,
-    setTemasSeleccionados
-  ] = useState<number[]>([])
+  temaSeleccionado,
+  setTemaSeleccionado
+] = useState<number | null>(null)
 
   const [
     temario,
@@ -169,7 +169,7 @@ setTemas(
 
               <div className="px-3 py-1.5 rounded-lg bg-emerald-500/20 text-emerald-300 text-xs font-semibold">
 
-                {temario?.temasDetectados} temas detectados
+                {temario?.temasDetectados} Apartados detectados
 
               </div>
 
@@ -204,28 +204,12 @@ setTemas(
 
   <div className="flex items-center justify-between">
 
-    <h2 className="text-2xl font-bold text-violet-300">
-
-      Temas detectados
-
-    </h2>
-
-    <div className="text-slate-400 text-sm">
-
-      {temas.length} temas
-
-    </div>
-
   </div>
 
   {/* ACCIONES */}
-  <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 flex flex-col xl:flex-row xl:items-center xl:justify-between gap-4">
+ <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 flex justify-start">
 
-    <div className="text-sm text-violet-300 font-semibold">
 
-      {temasSeleccionados.length} temas seleccionados
-
-    </div>
 
     <button
 
@@ -234,7 +218,7 @@ setTemas(
   onClick={async () => {
 
   if (
-    temasSeleccionados.length === 0
+    temaSeleccionado === null
   ) {
     return
   }
@@ -266,7 +250,8 @@ setTemas(
 
             temarioId: id,
 
-            temasSeleccionados
+            temasSeleccionados:
+              [temaSeleccionado]
           })
         }
       )
@@ -274,7 +259,7 @@ setTemas(
     const data =
       await response.json()
 
-      alert(
+    alert(
 `Resumen generado
 
 Prompt tokens: ${data.promptTokens}
@@ -289,18 +274,9 @@ Total tokens: ${data.totalTokens}`
       id: data.id,
 
       titulo:
-        temasSeleccionados.length === 1
-
-          ? temas.find(
-              t => t.id === temasSeleccionados[0]
-            )?.titulo || "Resumen"
-
-          : `Resumen de temas ${temas
-              .filter(t =>
-                temasSeleccionados.includes(t.id)
-              )
-              .map((t, index) => index + 1)
-              .join(", ")}`,
+        temas.find(
+          t => t.id === temaSeleccionado
+        )?.titulo || "Resumen",
 
       temas:
         data.numeroTemas,
@@ -317,7 +293,9 @@ Total tokens: ${data.totalTokens}`
       ...resumenes
     ])
 
-    setTemasSeleccionados([])
+    setTemaSeleccionado(
+      null
+    )
 
   }
   finally {
@@ -347,7 +325,10 @@ Total tokens: ${data.totalTokens}`
     {temas.map((tema, index) => {
 
   const temaId =
-  Number(tema.id)
+    Number(tema.id)
+
+  const seleccionado =
+    temaSeleccionado === temaId
 
   return (
 
@@ -355,9 +336,7 @@ Total tokens: ${data.totalTokens}`
       key={tema.id}
 
       className={`rounded-2xl border transition-all duration-300 p-5 ${
-        temasSeleccionados.includes(
-          temaId
-        )
+        seleccionado
           ? "border-cyan-400 bg-cyan-500/10"
           : "border-slate-800 bg-slate-900 hover:border-slate-700"
       }`}
@@ -380,29 +359,24 @@ Total tokens: ${data.totalTokens}`
           onClick={() => {
 
             if (
-              temasSeleccionados.includes(
-                temaId
-              )
-            ) {
-              setTemasSeleccionados(
-                temasSeleccionados.filter(
-                  t => t !== temaId
-                )
+              seleccionado
+            )
+            {
+              setTemaSeleccionado(
+                null
               )
             }
-            else {
-              setTemasSeleccionados([
-                ...temasSeleccionados,
+            else
+            {
+              setTemaSeleccionado(
                 temaId
-              ])
+              )
             }
 
           }}
 
-          className={`w-6 h-6 rounded-full border-2 transition ${
-            temasSeleccionados.includes(
-              temaId
-            )
+          className={`w-6 h-6 shrink-0 rounded-full border-2 transition ${
+            seleccionado
               ? "bg-cyan-400 border-cyan-400"
               : "border-slate-600"
           }`}
@@ -457,7 +431,7 @@ Total tokens: ${data.totalTokens}`
 
       <p className="text-slate-400 mt-4 max-w-2xl mx-auto leading-relaxed">
 
-        Selecciona uno o varios temas y genera tu primer resumen mediante inteligencia artificial.
+        Selecciona uno de los apartados del temario y genera un resumen mediante inteligencia artificial.
 
       </p>
 
@@ -483,20 +457,6 @@ Total tokens: ${data.totalTokens}`
 
     </h3>
 
-    <div className="flex flex-wrap gap-2 mt-4">
-
-      <div className="px-3 py-1.5 rounded-lg bg-violet-500/20 text-violet-300 text-xs font-semibold">
-
-        {resumen.temas} {
-  resumen.temas === 1
-    ? "tema"
-    : "temas"
-}
-
-      </div>
-
-    </div>
-
   </div>
 
   <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center shrink-0">
@@ -510,13 +470,7 @@ Total tokens: ${data.totalTokens}`
 
 </div>
 
-      <p className="text-slate-400 text-sm leading-relaxed mt-5">
-
-        Resumen generado automáticamente mediante IA a partir de los temas seleccionados del temario.
-
-      </p>
-
-      <div className="flex flex-wrap gap-3 mt-6">
+      <div className="flex flex-wrap gap-3 mt-5">
 
         <button
 
@@ -727,16 +681,6 @@ Total tokens: ${data.totalTokens}`
 
     </h3>
 
-    <div className="flex flex-wrap gap-2 mt-4">
-
-      <div className="px-3 py-1.5 rounded-lg bg-orange-500/20 text-orange-300 text-xs font-semibold">
-
-        {podcast.duracion}
-
-      </div>
-
-    </div>
-
   </div>
 
   <div className="w-14 h-14 rounded-2xl bg-orange-500/10 flex items-center justify-center shrink-0">
@@ -750,27 +694,12 @@ Total tokens: ${data.totalTokens}`
 
 </div>
 
-      <p className="text-slate-400 text-sm leading-relaxed mt-5">
-
-        Podcast generado automáticamente a partir de un resumen IA del temario.
-
-      </p>
-
-      <div className="mt-6 space-y-3">
-
-  <div className="flex items-center justify-between text-xs text-slate-400">
-
-    <span>{podcast.duracion}</span>
-
-  </div>
-
-</div>
 
       <div className="flex flex-wrap gap-3 mt-6">
 
         <audio
   controls
-  className="w-full"
+  className="w-full mb-4"
 >
   <source
     src={`${import.meta.env.VITE_API_URL}${podcast.audioUrl}`}
@@ -779,6 +708,44 @@ Total tokens: ${data.totalTokens}`
 </audio>
 
         <button
+
+  onClick={async () => {
+
+    const response =
+      await fetch(
+        `${import.meta.env.VITE_API_URL}${podcast.audioUrl}`
+      )
+
+    const blob =
+      await response.blob()
+
+    const url =
+      window.URL.createObjectURL(
+        blob
+      )
+
+    const enlace =
+      document.createElement("a")
+
+    enlace.href = url
+
+    enlace.download =
+      `${podcast.titulo}.mp3`
+
+    document.body.appendChild(
+      enlace
+    )
+
+    enlace.click()
+
+    enlace.remove()
+
+    window.URL.revokeObjectURL(
+      url
+    )
+
+  }}
+
   className="h-11 px-4 rounded-xl bg-slate-950 border border-slate-800 hover:bg-slate-800 transition text-xs font-semibold"
 >
 

@@ -848,9 +848,24 @@ return (
 
     {mostrarModalPrepararPDF && (
 
-  <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50">
+  <div className="
+  fixed inset-0
+  bg-black/70
+  backdrop-blur-sm
+  flex items-center justify-center
+  z-50
+  p-4
+">
 
-    <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 w-full max-w-2xl">
+    <div className="
+  bg-slate-900
+  border border-slate-800
+  rounded-3xl
+  p-8
+  w-full max-w-2xl
+  max-h-[85vh]
+  overflow-y-auto
+">
 
       <div className="flex items-center justify-between mb-6">
 
@@ -869,7 +884,7 @@ return (
 
       </div>
 
-      <div className="space-y-3">
+      <div className="space-y-3 max-h-[50vh] overflow-y-auto pr-2">
 
         {temarios
           .filter(t => !t.procesadoPDF)
@@ -911,9 +926,24 @@ window.location.href =
 
 {mostrarModalUnirPDFs && (
 
-  <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50">
+  <div className="
+  fixed inset-0
+  bg-black/70
+  backdrop-blur-sm
+  flex items-center justify-center
+  z-50
+  p-4
+">
 
-    <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 w-full max-w-2xl">
+    <div className="
+  bg-slate-900
+  border border-slate-800
+  rounded-3xl
+  p-8
+  w-full max-w-2xl
+  max-h-[85vh]
+  overflow-y-auto
+">
 
       <div className="flex items-center justify-between mb-6">
 
@@ -939,7 +969,7 @@ window.location.href =
 
       </div>
 
-      <div className="space-y-3">
+      <div className="space-y-3 max-h-[50vh] overflow-y-auto pr-2">
 
         {temarios
           .filter(t => !t.procesadoPDF)
@@ -1091,7 +1121,14 @@ window.location.href =
 
 {mostrarModalRenombrar && (
 
-  <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50">
+  <div className="
+  fixed inset-0
+  bg-black/70
+  backdrop-blur-sm
+  flex items-center justify-center
+  z-50
+  p-4
+">
 
     <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 w-full max-w-md">
 

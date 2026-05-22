@@ -26,7 +26,7 @@ public class SugerenciasController : ControllerBase
         var message = new EmailMessage();
 
         message.From =
-    "contacto@entrenatuoposicion.es";
+            "contacto@entrenatuoposicion.es";
 
         message.To.Add(
             "davgalm@hotmail.com"
@@ -38,15 +38,6 @@ public class SugerenciasController : ControllerBase
         message.HtmlBody =
             $@"
             <h2>Nueva sugerencia</h2>
-
-            <p>
-                <strong>Correo usuario:</strong>
-                {request.Email}
-            </p>
-
-            <p>
-                <strong>Mensaje:</strong>
-            </p>
 
             <p>
                 {request.Mensaje}
@@ -63,7 +54,5 @@ public class SugerenciasController : ControllerBase
 
 public class SugerenciaRequest
 {
-    public string Email { get; set; } = "";
-
     public string Mensaje { get; set; } = "";
 }

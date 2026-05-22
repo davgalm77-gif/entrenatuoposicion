@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { ReactNode } from "react"
 import DashboardLayout from "../layouts/DashboardLayout"
 
@@ -25,7 +26,7 @@ function OfimaticaCard({
 
   return (
 
-    <button className="group bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-2xl p-6 text-left transition hover:-translate-y-1">
+    <button className="group h-full w-full bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-2xl p-6 text-left transition hover:-translate-y-1 flex flex-col">
 
       <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-5 ${color}`}>
 
@@ -70,98 +71,147 @@ function OfimaticaPage() {
         </div>
 
         {/* GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
 
           {/* WORD */}
-          <OfimaticaCard
-            titulo="Word"
-            descripcion="Formato de documentos, estilos, tablas y herramientas de edición."
-            color="bg-cyan-500/20"
-            icono={
-              <FileText
-                size={28}
-                className="text-cyan-400"
-              />
-            }
-          />
+          <Link
+            to="/word-test"
+            className="h-full"
+          >
+
+            <OfimaticaCard
+              titulo="Word"
+              descripcion="Formato de documentos, estilos, tablas y herramientas de edición."
+              color="bg-cyan-500/20"
+              icono={
+                <FileText
+                  size={28}
+                  className="text-cyan-400"
+                />
+              }
+            />
+
+          </Link>
 
           {/* EXCEL */}
-          <OfimaticaCard
-            titulo="Excel"
-            descripcion="Fórmulas, funciones, gráficos y hojas de cálculo."
-            color="bg-emerald-500/20"
-            icono={
-              <Table2
-                size={28}
-                className="text-emerald-400"
-              />
-            }
-          />
+          <Link
+            to="/excell-test"
+            className="h-full"
+          >
+
+            <OfimaticaCard
+              titulo="Excel"
+              descripcion="Fórmulas, funciones, gráficos y hojas de cálculo."
+              color="bg-emerald-500/20"
+              icono={
+                <Table2
+                  size={28}
+                  className="text-emerald-400"
+                />
+              }
+            />
+
+          </Link>
 
           {/* ACCESS */}
-          <OfimaticaCard
-            titulo="Access"
-            descripcion="Bases de datos, consultas, formularios e informes."
-            color="bg-violet-500/20"
-            icono={
-              <Database
-                size={28}
-                className="text-violet-400"
-              />
-            }
-          />
+          <Link
+            to="/access-test"
+            className="h-full"
+          >
+
+            <OfimaticaCard
+              titulo="Access"
+              descripcion="Bases de datos, consultas, formularios e informes."
+              color="bg-violet-500/20"
+              icono={
+                <Database
+                  size={28}
+                  className="text-violet-400"
+                />
+              }
+            />
+
+          </Link>
 
           {/* POWERPOINT */}
-          <OfimaticaCard
-            titulo="PowerPoint"
-            descripcion="Presentaciones, diapositivas y herramientas visuales."
-            color="bg-orange-500/20"
-            icono={
-              <PresentationIcon
-                size={28}
-                className="text-orange-400"
-              />
-            }
-          />
+          <Link
+            to="/powerpoint-test"
+            className="h-full"
+          >
+
+            <OfimaticaCard
+              titulo="PowerPoint"
+              descripcion="Presentaciones, diapositivas y herramientas visuales."
+              color="bg-orange-500/20"
+              icono={
+                <PresentationIcon
+                  size={28}
+                  className="text-orange-400"
+                />
+              }
+            />
+
+          </Link>
 
           {/* WINDOWS */}
-          <OfimaticaCard
-            titulo="Windows"
-            descripcion="Sistema operativo, configuración y herramientas básicas."
-            color="bg-blue-500/20"
-            icono={
-              <Monitor
-                size={28}
-                className="text-blue-400"
-              />
-            }
-          />
+          <Link
+            to="/windows-test"
+            className="h-full"
+          >
+
+            <OfimaticaCard
+              titulo="Windows"
+              descripcion="Sistema operativo, configuración y herramientas básicas."
+              color="bg-blue-500/20"
+              icono={
+                <Monitor
+                  size={28}
+                  className="text-blue-400"
+                />
+              }
+            />
+
+          </Link>
 
           {/* CORREO */}
-          <OfimaticaCard
-            titulo="Correo"
-            descripcion="Gestión de email, bandejas, reglas y comunicación."
-            color="bg-pink-500/20"
-            icono={
-              <Mail
-                size={28}
-                className="text-pink-400"
-              />
-            }
-          />
+          <Link
+            to="/correo-test"
+            className="h-full"
+          >
+
+            <OfimaticaCard
+              titulo="Correo"
+              descripcion="Gestión de email, bandejas, reglas y comunicación."
+              color="bg-pink-500/20"
+              icono={
+                <Mail
+                  size={28}
+                  className="text-pink-400"
+                />
+              }
+            />
+
+          </Link>
 
           {/* INTERNET */}
-          <OfimaticaCard
-            titulo="Internet"
-            descripcion="Navegación web, buscadores, seguridad y recursos online."
-            color="bg-yellow-500/20"
-            icono={
-              <Globe
-                size={28}
-                className="text-yellow-400"
-              />
-            }
-          />
+          <Link
+            to="/internet-test"
+            className="h-full"
+          >
+
+            <OfimaticaCard
+              titulo="Internet"
+              descripcion="Navegación web, buscadores, seguridad y recursos online."
+              color="bg-yellow-500/20"
+              icono={
+                <Globe
+                  size={28}
+                  className="text-yellow-400"
+                />
+              }
+            />
+
+          </Link>
 
         </div>
 

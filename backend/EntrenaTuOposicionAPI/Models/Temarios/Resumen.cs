@@ -12,6 +12,9 @@ public class Resumen
     public Temario Temario { get; set; }
         = null!;
 
+    public List<Podcast> Podcasts { get; set; }
+= [];
+
     public int NumeroTemas { get; set; }
 
     public int Paginas { get; set; }

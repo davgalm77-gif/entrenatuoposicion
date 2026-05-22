@@ -1,5 +1,6 @@
 import "react-pdf/dist/Page/TextLayer.css";
 import "react-pdf/dist/Page/AnnotationLayer.css";
+import { Analytics } from "@vercel/analytics/react";
 
 import {
   GoogleOAuthProvider
@@ -23,6 +24,8 @@ createRoot(document.getElementById("root")!).render(
       >
 
         <App />
+
+        <Analytics />
 
       </GoogleOAuthProvider>
 

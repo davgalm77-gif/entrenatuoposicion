@@ -16,6 +16,9 @@ using OpenAI;
 using RestSharp;
 using OpenAI.Chat;
 using PdfSharpCore.Pdf;
+using QuestPDF.Fluent;
+using QuestPDF.Infrastructure;
+using QuestPDF.Helpers;
 
 
 namespace EntrenaTuOposicionAPI.Controllers;
@@ -214,7 +217,7 @@ public async Task<IActionResult> PrepararPdf(
         );
 
     var nuevoDocumento =
-    new PdfSharpCore.Pdf.PdfDocument();
+        new PdfSharpCore.Pdf.PdfDocument();
 
     foreach (var paginaNumero in request.Paginas)
     {
@@ -256,41 +259,70 @@ public async Task<IActionResult> PrepararPdf(
     );
 
     var nuevoTemario =
-    new Temario
-    {
+        new Temario
+        {
+            Nombre =
+                temario.Nombre,
 
-        Nombre = temario.Nombre,
+            ArchivoOriginalPath =
+                $"/uploads/preparados/{nombreNuevo}",
 
-        ArchivoOriginalPath =
-            $"/uploads/preparados/{nombreNuevo}",
+            ArchivoProcesadoPath =
+                $"/uploads/procesados/{nombreNuevo}",
 
-        ProcesadoPDF = true,
+            ProcesadoPDF = true,
 
-        ProcesadoIA = false,
+            ProcesadoIA = false,
 
-        Paginas =
-            request.Paginas.Count,
+            Paginas =
+                request.Paginas.Count,
 
-        TemasDetectados = 0,
+            TemasDetectados = 0,
 
-        FechaCreacion =
-            DateTime.UtcNow,
+            FechaCreacion =
+                DateTime.UtcNow,
 
-        OposicionId =
-            temario.OposicionId
-    };
+            OposicionId =
+                temario.OposicionId
+        };
 
-_context.Temarios.Add(
+    _context.Temarios.Add(
     nuevoTemario
 );
+
+// BORRAR PDF PROCESADO ANTIGUO
+if (
+    !string.IsNullOrEmpty(
+        temario.ArchivoProcesadoPath
+    )
+)
+{
+    var rutaProcesadoAntiguo =
+        Path.Combine(
+            Directory.GetCurrentDirectory(),
+            "wwwroot",
+            temario.ArchivoProcesadoPath.TrimStart('/')
+        );
+
+    if (
+        System.IO.File.Exists(
+            rutaProcesadoAntiguo
+        )
+    )
+    {
+        System.IO.File.Delete(
+            rutaProcesadoAntiguo
+        );
+    }
+}
 
 _context.Temarios.Remove(
     temario
 );
 
-await _context.SaveChangesAsync();
+    await _context.SaveChangesAsync();
 
-return Ok(nuevoTemario);
+    return Ok(nuevoTemario);
 }
 
     [HttpPost("upload")]
@@ -330,8 +362,13 @@ public async Task<IActionResult> SubirPDF(
         );
     }
 
-    var nombreArchivo =
-        $"{Guid.NewGuid()}_{archivo.FileName}";
+    var extension =
+    Path.GetExtension(
+        archivo.FileName
+    );
+
+var nombreArchivo =
+    $"{Guid.NewGuid()}{extension}";
 
     var ruta =
         Path.Combine(
@@ -415,20 +452,136 @@ using (
 
     return Ok(temario);
 }
+
 [HttpDelete("{id}")]
 public async Task<IActionResult> EliminarTemario(
     int id
 )
 {
     var temario =
-        await _context.Temarios.FindAsync(id);
+        await _context.Temarios
+            .Include(t => t.Temas)
+            .Include(t => t.Resumenes)
+            .ThenInclude(r => r.Podcasts)
+            .FirstOrDefaultAsync(
+                t => t.Id == id
+            );
 
     if (temario == null)
     {
         return NotFound();
     }
 
-    _context.Temarios.Remove(temario);
+    // BORRAR MP3 DE PODCASTS
+    foreach (var resumen in temario.Resumenes)
+    {
+        foreach (var podcast in resumen.Podcasts)
+        {
+            if (
+                !string.IsNullOrEmpty(
+                    podcast.ArchivoMP3Path
+                )
+            )
+            {
+                var rutaAudio =
+                    Path.Combine(
+                        Directory.GetCurrentDirectory(),
+                        "wwwroot",
+                        podcast.ArchivoMP3Path.TrimStart('/')
+                    );
+
+                if (
+                    System.IO.File.Exists(
+                        rutaAudio
+                    )
+                )
+                {
+                    System.IO.File.Delete(
+                        rutaAudio
+                    );
+                }
+            }
+        }
+    }
+
+    // PDF ORIGINAL
+    if (
+        !string.IsNullOrEmpty(
+            temario.ArchivoOriginalPath
+        )
+    )
+    {
+        var rutaOriginal =
+            Path.Combine(
+                Directory.GetCurrentDirectory(),
+                "wwwroot",
+                temario.ArchivoOriginalPath.TrimStart('/')
+            );
+
+        if (
+            System.IO.File.Exists(
+                rutaOriginal
+            )
+        )
+        {
+            System.IO.File.Delete(
+                rutaOriginal
+            );
+        }
+    }
+
+    // PDF PROCESADO
+    if (
+        !string.IsNullOrEmpty(
+            temario.ArchivoProcesadoPath
+        )
+    )
+    {
+        var rutaProcesado =
+            Path.Combine(
+                Directory.GetCurrentDirectory(),
+                "wwwroot",
+                temario.ArchivoProcesadoPath.TrimStart('/')
+            );
+
+        if (
+            System.IO.File.Exists(
+                rutaProcesado
+            )
+        )
+        {
+            System.IO.File.Delete(
+                rutaProcesado
+            );
+        }
+    }
+
+    // BORRAR PODCASTS
+    var podcasts =
+        temario.Resumenes
+            .SelectMany(
+                r => r.Podcasts
+            )
+            .ToList();
+
+    _context.Podcasts.RemoveRange(
+        podcasts
+    );
+
+    // BORRAR RESÚMENES
+    _context.Resumenes.RemoveRange(
+        temario.Resumenes
+    );
+
+    // BORRAR TEMAS
+    _context.Temas.RemoveRange(
+        temario.Temas
+    );
+
+    // BORRAR TEMARIO
+    _context.Temarios.Remove(
+        temario
+    );
 
     await _context.SaveChangesAsync();
 
@@ -1136,9 +1289,6 @@ foreach (var linea in lineas)
     var texto =
         linea.Texto;
 
-    Console.WriteLine(
-        "3 - Generando audio..."
-    );
 
     var voiceId =
     indice % 2 == 0
@@ -1274,9 +1424,6 @@ var errores =
 
 await proceso.WaitForExitAsync();
 
-Console.WriteLine(
-    "5 - Podcast terminado"
-);
 
 if (proceso.ExitCode != 0)
 {
@@ -1346,6 +1493,18 @@ _context.Podcasts.Add(
 
 await _context.SaveChangesAsync();
 
+if (
+    Directory.Exists(
+        carpetaTemporal
+    )
+)
+{
+    Directory.Delete(
+        carpetaTemporal,
+        true
+    );
+}
+
 return Ok(new
 {
     podcast.Id,
@@ -1400,6 +1559,37 @@ public async Task<IActionResult> EliminarPodcast(
     if (podcast == null)
     {
         return NotFound();
+    }
+
+    if (
+        !string.IsNullOrEmpty(
+            podcast.ArchivoMP3Path
+        )
+    )
+    {
+        var nombreArchivo =
+            Path.GetFileName(
+                podcast.ArchivoMP3Path
+            );
+
+        var rutaAudio =
+            Path.Combine(
+                Directory.GetCurrentDirectory(),
+                "wwwroot",
+                "podcasts",
+                nombreArchivo
+            );
+
+        if (
+            System.IO.File.Exists(
+                rutaAudio
+            )
+        )
+        {
+            System.IO.File.Delete(
+                rutaAudio
+            );
+        }
     }
 
     _context.Podcasts.Remove(
@@ -1516,6 +1706,85 @@ await _context.SaveChangesAsync();
 
 return Ok(nuevoTemario);
 
+}
+
+[HttpGet("resumenes/{id}/pdf")]
+public async Task<IActionResult> DescargarResumenPDF(
+    int id
+)
+{
+    var resumen =
+        await _context.Resumenes
+            .FirstOrDefaultAsync(
+                r => r.Id == id
+            );
+
+    if (resumen == null)
+    {
+        return NotFound();
+    }
+
+    QuestPDF.Settings.License =
+        QuestPDF.Infrastructure.LicenseType.Community;
+
+    var pdf =
+        QuestPDF.Fluent.Document
+            .Create(container =>
+            {
+                container.Page(page =>
+                {
+                    page.Margin(40);
+
+                    page.Size(
+                        QuestPDF.Helpers.PageSizes.A4
+                    );
+
+                    page.Content()
+                        .Column(col =>
+                        {
+                            col.Item()
+                                .Text(
+                                    resumen.Titulo
+                                )
+                                .FontSize(26)
+                                .Bold();
+
+                            col.Item()
+                                .PaddingTop(20);
+
+                            foreach (
+                                var bloque in resumen.Contenido
+                                    .Split(
+                                        "\n\n",
+                                        StringSplitOptions.RemoveEmptyEntries
+                                    )
+                            )
+                            {
+                                col.Item()
+                                    .Border(1)
+                                    .BorderColor(
+                                        "#D4D4D4"
+                                    )
+                                    .Padding(15)
+                                    .Text(
+                                        bloque
+                                            .Replace("---", "")
+                                    )
+                                    .FontSize(12);
+
+                                col.Item()
+                                    .PaddingBottom(10);
+                            }
+                        });
+                });
+            })
+            .GeneratePdf();
+
+    return File(
+        pdf,
+        "application/pdf",
+        $"{resumen.Titulo}.pdf"
+    );
 }
 
 }

@@ -20,9 +20,17 @@ import MatematicasPage from "./pages/MatematicasPage"
 import CreditosPage from "./pages/CreditosPage"
 import TemarioPage from "./pages/TemarioPage"
 import PlanEstudioPage from "./pages/PlanEstudioPage"
-import VerbalTestPage from "./pages/psicotecnicos/VerbalTestPage"
-import FigurasTestPage from "./pages/psicotecnicos/FigurasTestPage"
-import RetentivaTestPage from "./pages/psicotecnicos/RetentivaTestPage"
+import VerbalTestPage from "./pages/Psicotecnicos/VerbalTestPage"
+import NumericoTestPage from "./pages/Psicotecnicos/NumericoTestPage"
+import FigurasTestPage from "./pages/Psicotecnicos/FigurasTestPage"
+import RetentivaTestPage from "./pages/Psicotecnicos/RetentivaTestPage"
+import AccessTestPage from "./pages/Ofimatica/AccessTestPage"
+import CorreoTestPage from "./pages/Ofimatica/CorreoTestPage"
+import ExcellTestPage from "./pages/Ofimatica/ExcellTestPage"
+import InternetTestPage from "./pages/Ofimatica/InternetTestPage"
+import PowerpointTestPage from "./pages/Ofimatica/PowerpointTestPage"
+import WindowsTestPage from "./pages/Ofimatica/WindowsTestPage"
+import WordTestPage from "./pages/Ofimatica/WordTestPage"
 import SeleccionarOposicionPage from "./pages/SeleccionarOposicionPage"
 import PrepararPDFPage from "./pages/PrepararPDFPage"
 import VisorTemarioPage from "./pages/VisorTemarioPage"
@@ -247,6 +255,15 @@ const apiUrl =
       />
 
       <Route
+        path="/numerico-test"
+        element={
+          isLogged
+            ? <NumericoTestPage />
+            : <MantenimientoPage />
+        }
+      />
+
+      <Route
         path="/figuras-test"
         element={
           isLogged
@@ -260,6 +277,69 @@ const apiUrl =
         element={
           isLogged
             ? <RetentivaTestPage />
+            : <MantenimientoPage />
+        }
+      />
+
+      <Route
+        path="/access-test"
+        element={
+          isLogged
+            ? <AccessTestPage />
+            : <MantenimientoPage />
+        }
+      />
+
+      <Route
+        path="/correo-test"
+        element={
+          isLogged
+            ? <CorreoTestPage />
+            : <MantenimientoPage />
+        }
+      />
+
+      <Route
+        path="/excell-test"
+        element={
+          isLogged
+            ? <ExcellTestPage />
+            : <MantenimientoPage />
+        }
+      />
+
+      <Route
+        path="/internet-test"
+        element={
+          isLogged
+            ? <InternetTestPage />
+            : <MantenimientoPage />
+        }
+      />
+
+      <Route
+        path="/powerpoint-test"
+        element={
+          isLogged
+            ? <PowerpointTestPage />
+            : <MantenimientoPage />
+        }
+      />
+
+      <Route
+        path="/windows-test"
+        element={
+          isLogged
+            ? <WindowsTestPage />
+            : <MantenimientoPage />
+        }
+      />
+
+      <Route
+        path="/word-test"
+        element={
+          isLogged
+            ? <WordTestPage />
             : <MantenimientoPage />
         }
       />

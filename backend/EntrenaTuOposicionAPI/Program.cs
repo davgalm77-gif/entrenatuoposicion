@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.HttpOverrides;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using EntrenaTuOposicionAPI.Data;
@@ -30,6 +31,13 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddControllers();
 
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders =
+        ForwardedHeaders.XForwardedFor |
+        ForwardedHeaders.XForwardedProto;
+});
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(
@@ -37,13 +45,10 @@ builder.Services.AddCors(options =>
         policy =>
         {
             policy
-                .WithOrigins(
-                    "http://localhost:5173",
-                    "http://localhost:5183",
-                    "https://www.entrenatuoposicion.es"
-                )
+                .SetIsOriginAllowed(_ => true)
                 .AllowAnyHeader()
-                .AllowAnyMethod();
+                .AllowAnyMethod()
+                .AllowCredentials();
         });
 });
 
@@ -125,13 +130,13 @@ builder.Services
 
 var app = builder.Build();
 
+app.UseForwardedHeaders();
+
 app.UseCors("AllowFrontend");
 
 app.UseSwagger();
 
 app.UseSwaggerUI();
-
-// app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 
